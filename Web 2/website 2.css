@@ -1,0 +1,267 @@
+.contain {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        'head'
+        'head-link'
+        'content'
+    ;
+}
+.head {
+    grid-area: head;
+}
+.img1 {
+    border-radius: 5px 5px;
+    width: 100%;
+    height: 100px;
+}
+.head-link {
+    grid-area: head-link;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 15% auto 10% 10% 10% 10%;
+    grid-template-areas: 
+        '   img2 search TB GH TK QT'
+    ;
+}
+.HinhAnh {
+    grid-area: img2;
+}
+.img2 {
+    margin-left: 10px;
+    width: 200px;
+    height: 90px;
+}
+.TimKiem {
+    padding-left: 50px;
+    padding-top: 25px;
+    grid-area: search;
+}
+.symbol1 {
+    border: 1px solid white;
+    border-radius: 10px 10px;
+    font-size: 20px;
+    color: black;
+}
+.search-box {
+    border: 1px solid rgba(128, 128, 128, 0.575);
+    position: relative;
+    width: 450px;
+    height: 30px;
+    border-radius: 5px 5px;
+}
+.symbol2 {
+    top: 141px;
+    left: 660px;
+    position: absolute;
+    border-radius: 5px 5px;
+    border: 1px solid white;
+    width: 90px;
+    font-size: 20px;
+    color: white;
+    background-color: red;
+}
+.ThongBao {
+    text-align: center;
+    grid-area: TB;
+}
+.bell {
+    color: gray;
+    font-size: 30px;
+}
+.TBao {
+    color: gray;
+    font-size: 15px;
+}
+.GioHang {
+    grid-area: GH;
+    text-align: center;
+}
+.TaiKhoan {
+    grid: TK;
+    text-align: center;
+}
+.QuocTich {
+    grid-area: QT;
+}
+.VietNam {
+    width: 90px;
+    border: 1px solid gray;
+    border-radius: 5px 5px;
+}
+.VN {
+    margin-left: 5px;
+    width: 60px;
+    height: 50px;
+}
+.down {
+    color: black;
+}
+.content {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    grid-area: content;
+    background-color: blanchedalmond;
+}
+.sub-content {
+    width: 100%;
+    height: 500px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 10% 25% 40% 25%;
+    grid-template-areas: 
+        'left mid1 mid2 right'
+        'footer footer footer footer'
+    ;
+}
+.left {
+    padding-left: 15px;
+    padding-top: 15px;
+    grid-area: left;
+}
+.img3 {
+    transition: 0.5s;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 70px;
+    height: 90px;
+}
+.img4 {
+    margin-bottom: 10px;
+    width: 90px;
+    height: 50px;
+}
+.img3:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
+.img-3 {
+    margin-top: 20px;
+    width: 300px;
+    height: 400px;
+}
+.img3:hover .img-3 {
+    width: 300px;
+    height: 400px;
+}
+.mid2 {
+    grid-area: mid2;
+    padding-left: 20px;
+}
+.title2 {
+    font-size: 30px;
+}
+.Nam {
+    text-decoration: none;
+}
+.danhgia {color: orangered;}
+h1 {
+    color: red;
+}
+.linethrough {
+    text-decoration: line-through;
+}
+.discount {
+    margin-left: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 5px 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.table {border: 1px solid black;}
+.right {
+    grid-area: right;
+}
+.footer {
+    padding-left: 100px;
+    grid-area: footer;
+}
+.ADD {
+    color: #ec0909;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ec0909;
+    border-radius: 9px 9px;
+}
+.ADD1 {
+    border: none;
+    color: white;
+    width: 200px;
+    height: 30px;
+    background-color: #ec0909;
+    border-radius: 9px 9px;
+}
+@media screen and (max-width: 768px) {
+    .contain {
+      
+        background-color: antiquewhite;
+        width: 767px;
+        height: auto;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            'head'
+            'content'
+        ;
+    }
+    .head {
+        display: none;
+    }
+    .head-link {
+        background-color: white;
+        border-left: 3px solid red;
+        grid-area: head;
+        display: grid;
+        grid-template-columns: auto 10% 10%;
+        grid-template-areas:
+            'img2 img2 img2' 
+            'search GH TK '
+        ;
+    }
+    .HinhAnh {
+        text-align: center;
+        grid-area: img2;
+    }
+    .img2 {
+        width: 200px;
+        height: 50px;
+    }
+    .TimKiem {
+        grid-area: search;
+    }
+    .symbol1 {
+        border: 1px solid white;
+        border-radius: 10px 10px;
+        font-size: 20px;
+        color: red;
+    }
+    .search-box {
+        margin-top: -10px;
+        margin-bottom: 20px;
+        border: 1px solid red;
+        position: relative;
+        width: 450px;
+        height: 30px;
+        border-radius: 5px 5px;
+    }
+    .symbol2 {display: none;}
+    .GioHang {
+        padding-top: 20px;
+        grid-area: GH;
+    }
+    .TaiKhoan {
+        padding-top: 20px;
+        grid-area: TK;
+    }
+    .bell {
+        color: red;
+        font-size: 30px;
+    }
+    .TBao {display: none;}
+    .ThongBao {display: none;}
+    .QuocTich {display: none;}
+}
