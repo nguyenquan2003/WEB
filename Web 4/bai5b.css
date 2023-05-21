@@ -1,0 +1,30 @@
+body {
+        background-image: url('Images_00/ThanhPhoSuongMu.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin-top: -20px;
+      }
+      
+
+#picture{
+        margin: 30px 20px; 
+}
+#box-shadow{
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+        margin: 30px 1px;
+        width: 100%;
+        height: 30%;
+        background-size: cover; /* hoặc contain */
+}
+span{
+        color: red;
+
+}
+h4{
+        color: white; 
+        white-space: nowrap;
+}
+#text{
+        margin: -140px 470px;
+}

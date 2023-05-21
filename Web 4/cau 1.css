@@ -1,0 +1,102 @@
+body {
+    background-image: url('Images_00/ThanhPhoSuongMu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-top: -20px;
+}
+
+label {
+    margin: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+#backgrd {
+    background-color: white;
+    border-radius: 10px;
+    float: right;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 40px;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#backgrd img {
+    width: 300px;
+    height: 70px;
+    margin: 20px 20px;
+}
+
+#backgrd h3 {
+    text-align: center;
+    color: blue;
+}
+
+#email {
+    box-sizing: border-box;
+    width: 90%;
+    border: rgba(0, 0, 0, .14) none;
+    padding: 10px;
+    border-color: gray;
+    background-color: rgba(0, 0, 0, .14);
+    margin-left: 20px;
+}
+#password {
+    box-sizing: border-box;
+    width: 90%;
+    border: rgba(0, 0, 0, .14) none;
+    padding: 10px;
+    border-color: gray;
+    background-color: rgba(0, 0, 0, .14);
+    margin-left: 20px;
+}
+
+#login {
+    margin-top: 5px;
+    padding: 8px;
+    color: white;
+    margin-left: 20px;
+    box-sizing: border-box;
+    width: 90%;
+    border: none;
+    background-color: rgb(94, 125, 219);
+}
+
+#form-login {
+    margin: -20px 10px;
+}
+
+#mail {
+    margin-top: -10px;
+}
+
+#pwd {
+    margin-top: 40px;
+}
+
+button {
+    background-color: rgb(0, 0, 255);
+    color: white;
+    border: none;
+    width: 90%;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 20px;
+    margin: 55px 20px;
+}
+
+.error{
+    color: red;
+    margin: 20px;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 999;
+}
