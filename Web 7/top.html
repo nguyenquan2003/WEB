@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SẢN PHẨM</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="sanpham.css" />
+
+    <script>
+      $(document).ready(function () {
+        $('.lv1').click(function () {
+          $(this).toggleClass('active');
+          $(this).siblings('.drop-content').toggle();
+        });
+      });
+      // thay đổi hình ảnh của sản phẩm
+      function changeImage(element, newSrc) {
+        element.src = newSrc;
+      }
+    </script>
+  </head>
+
+  <body>
+    <script src="js/bootstrap.js"></script>
+    <!-- header -->
+    <div class="container-fluid">
+      <div class="header">
+        <div class="menu_up">
+          <ul>
+            <li>
+              <a href="Cart.html"
+                ><img src="Image_header1/icon_gio_hang.svg" alt="" /> Giỏ hàng
+              </a>
+            </li>
+            <li>
+              <a href="Comingsoon.css"
+                ><img src="Image_header1/icon_dang_nhap.svg" alt="" /> Đăng nhập
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_heart_header.svg" alt="" /> Yêu
+                thích
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_tim_cua_hang.svg" alt="" /> Tìm
+                đơn hàng</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_tra_cuu_don_hang.svg" /> Tra cứu
+                đơn hàng</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu_down">
+          <ul>
+            <li class="logo">
+              <a href="TrangChu.html"
+                ><img src="Image_header1/Logo_Ananas_Header.svg"
+              /></a>
+            </li>
+            <li><a href="SanPham.html">SẢN PHẨM</a></li>
+            <li><a href="SanPham.html">NAM</a></li>
+            <li><a href="SanPham.html">NỮ</a></li>
+            <li><a href="SanPham.html">SALE OFF</a></li>
+            <li>
+              <a href="SanPham.html"
+                ><img src="Image_header1/DiscoverYOU.svg"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <img src="Image_header1/icon_tim_kiem.svg" alt="" />
+          <input type="text" placeholder="Tìm kiếm" />
+        </div>
+      </div>
+
+      <div class="hot-new">
+        <div
+          id="carouselExampleform-control"
+          class="carousel w-50 mx-auto"
+          data-ride="carousel">
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleform-control"
+            role="button"
+            data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <p>BUY 2 GET 10% OFF - ÁP DỤNG VỚI TẤT CẢ BASIC TEE</p>
+            </div>
+            <div class="carousel-item">
+              <p>FREE SHIPPING VỚI HOÁ ĐƠN TỪ 800K !</p>
+            </div>
+            <div class="carousel-item">
+              <p>HÀNG 2 TUẦN NHẬN ĐỔI - GIÀY NỬA NĂM BẢO HÀNH</p>
+            </div>
+            <div class="carousel-item">
+              <p>BUY MORE PAY LESS - ÁP DỤNG KHI MUA PHỤ KIỆN</p>
+            </div>
+          </div>
+
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleform-control"
+            role="button"
+            data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- container -->
+      <div class="container">
+        <div class="rowt">
+          <div class="left">
+            <div class="row-left-type">
+              <ul>
+                <li><a href="#">TẤT CẢ</a></li>
+                <li><a href="#">NAM</a></li>
+                <li><a href="#">NỮ</a></li>
+              </ul>
+            </div>
+            <hr />
+            <div id="tab_content">
+              <ul>
+                <li><a href="pk.html">Accessories | Phụ kiện</a></li>
+                <li><a href="bot.html">Footwear | Lên chân</a></li>
+                <li><a href="top.html">Top | Nửa trên</a></li>
+              </ul>
+            </div>
+            <div style="clear: both"></div>
+            <hr />
+            <div class="row_tree">
+              <ul>
+                <li class="myText">
+                  <label class="lv1">TRẠNG THÁI</label>
+                  <ul class="drop-content">
+                    <li><a href="#">Limited Edition</a></li>
+                    <li><a href="#">Online Only</a></li>
+                    <li><a href="#">Sale off</a></li>
+                    <li><a href="#">New Arival</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li class="myText">
+                  <label class="lv1">KIỂU DÁNG</label>
+                  <ul class="drop-content">
+                    <li><a href="#">Low Top</a></li>
+                    <li><a href="#">High Top</a></li>
+                    <li><a href="#">Mid Top</a></li>
+                    <li><a href="#">Mule</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li class="myText">
+                  <label class="lv1">DÒNG SẢN PHẨM</label>
+                  <ul class="drop-content">
+                    <li><a href="#">Basas</a></li>
+                    <li><a href="#">Vintas</a></li>
+                    <li><a href="#">Urbas</a></li>
+                    <li><a href="#">Pattas</a></li>
+                    <li><a href="#">Tote Bag</a></li>
+                    <li><a href="#">Socks | Vớ</a></li>
+                    <li><a href="#">Hat</a></li>
+                    <li><a href="#">Track 6</a></li>
+                    <li><a href="#">Shoelaces</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li class="myText">
+                  <label class="lv1">GIÁ</label>
+                  <ul class="drop-content">
+                    <li><a href="#">500k - 599k</a></li>
+                    <li><a href="#">> 600k</a></li>
+                    <li><a href="#">400k - 499k</a></li>
+                    <li><a href="#">300k - 399k</a></li>
+                    <li><a href="#">200k - 299k</a></li>
+                    <li>
+                      <a href="#"> < 200k</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>BỘ SƯU TẬP</li>
+                <li>
+                  <hr />
+                </li>
+                <li>SIZE SẢN PHẨM KHÁC</li>
+                <li>
+                  <hr />
+                </li>
+                <li>CHẤT LIỆU</li>
+                <li>
+                  <hr />
+                </li>
+                <li>SIZE GIÀY</li>
+                <li>
+                  <hr />
+                </li>
+                <li>MÀU SẮC</li>
+                <li>
+                  <hr />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right">
+            <div class="row-right-type">
+              <img src="Image_sanpham/bia1.jpg" alt="bia1" />
+            </div>
+            <div class="row-tree-right">
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t1.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t11.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t1.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Urbas Corluray Mix - High Top</h3>
+                      <h3 class="name">Corluray Mix</h3>
+                      <h3 class="T">610.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t2.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t22.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t2.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Urbas Corluray Mix - Low Top</h3>
+                      <h3 class="name">Corluray Mix</h3>
+                      <h3 class="T">650.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t3.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t33.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t3.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Vintas Jazico - High Top</h3>
+                      <h3 class="name">Royal White</h3>
+                      <h3 class="T">780.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row-tree-right">
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t4.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t44.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t4.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Vintas Jazico - Low Top</h3>
+                      <h3 class="name">Royal White</h3>
+                      <h3 class="T">720.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t5.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t55.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t5.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Track 6 Jazico - Low Top</h3>
+                      <h3 class="name">Royal White</h3>
+                      <h3 class="T">1.190.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t6.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t66.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t6.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Track 6 I.S.E.E</h3>
+                      <h3 class="name">Pure White/Icy Blue</h3>
+                      <h3 class="T">1.490.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row-tree-right">
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t7.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t77.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t7.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Vintas Soda Pop - Low Top</h3>
+                      <h3 class="name">Emerald</h3>
+                      <h3 class="T">680.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t8.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t88.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t8.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Vintas Soda Pop - High Top</h3>
+                      <h3 class="name">Red Violet</h3>
+                      <h3 class="T">720.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <div class="product">
+                    <div class="image-container">
+                      <a href="Product.html">
+                        <img
+                          src="Image_sanpham/t9.jpeg"
+                          onmouseover="changeImage(this, 'Image_sanpham/t99.jpeg')"
+                          onmouseout="changeImage(this, 'Image_sanpham/t9.jpeg')" />
+                        <span class="buy-now">MUA NGAY</span>
+                      </a>
+                    </div>
+                    <div class="caption">
+                      <h3 class="mau">Vintas Soda Pop - Low Top</h3>
+                      <h3 class="name">Amparo Blue</h3>
+                      <h3 class="T">680.000 VND</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="rowx">
+        <div class="col-3">
+          <div class="rowxcenter">
+            <img src="Image_sanpham/shop.svg" alt="shop" />
+          </div>
+          <br />
+          <div class="rowxt">
+            <a class="shop" href="TrangChu.html">TÌM CỦA HÀNG</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="rowsecon">
+            <div class="col3">
+              <a href="sanpham.html">
+                <h4>SẢN PHẨM</h4>
+              </a>
+              <ul>
+                <li><a href="#">Giày Nam</a></li>
+                <li><a href="#">Giày Nữ</a></li>
+                <li><a href="#">Thời trang &amp; Phụ kiện</a></li>
+                <li><a href="#">Sale-off</a></li>
+              </ul>
+            </div>
+            <div class="col3">
+              <a href="#">
+                <h4>VỀ CÔNG TY</h4>
+              </a>
+              <ul>
+                <li><a href="#">Dứa tuyển dụng</a></li>
+                <li><a href="#">Liên hệ nhượng quyền</a></li>
+                <li><a href="#">Về Ananas</a></li>
+              </ul>
+            </div>
+            <div class="col3">
+              <a href="#">
+                <h4>HỖ TRỢ</h4>
+              </a>
+              <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Bảo mật thông tin</a></li>
+                <li><a href="#">Chính sách chung</a></li>
+                <li><a href="#">Tra cứu đơn hàng</a></li>
+              </ul>
+            </div>
+            <div class="col3">
+              <a href="#">
+                <h4>LIÊN HỆ</h4>
+              </a>
+              <ul>
+                <li><a href="#">Email góp ý</a></li>
+                <li><a href="">Hotline</a></li>
+                <li><a href="">0963 429 749</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="rowthree">
+            <div class="col3">
+              <h4>ANANAS SOCIAL</h4>
+              <a href="https://www.facebook.com/Ananas.vietnam/"
+                ><img src="Image_sanpham/fb.svg" /></a
+              >&nbsp;
+              <a href="https://www.instagram.com/ananasvn/"
+                ><img src="Image_sanpham/ig.svg" /></a
+              >&nbsp;
+              <a href="https://www.youtube.com/discoveryou"
+                ><img src="Image_sanpham/ytb.svg"
+              /></a>
+            </div>
+            <div class="col3">
+              <h4>ĐĂNG KÝ NHẬN MAIL</h4>
+              <div class="formgroup">
+                <input type="email" class="formMail" id="" />
+                <a href="#" class="subscribe"
+                  ><img src="Image_sanpham/mui.jpg"
+                /></a>
+              </div>
+            </div>
+            <div class="col6">
+              <a href="#"><img src="Image_sanpham/logofooter.svg" /></a>
+            </div>
+          </div>
+          <div class="rowfour">
+            <div class="col3">
+              <a href="#"><img src="Image_sanpham/end.png" /></a>
+            </div>
+            <div class="col9">
+              Copyright © 2022 Ananas. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

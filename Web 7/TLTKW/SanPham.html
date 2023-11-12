@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SẢN PHẨM</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="TrangChu.css" />
+    <script>
+      $(document).ready(function() {
+        $(".lv1").click(function() {
+          $(this).toggleClass("active");
+          $(this).siblings(".drop-content").toggle();
+        });
+      });
+      // thay đổi hình ảnh của sản phẩm
+      function changeImage(element, newSrc) {
+      element.src = newSrc;
+      }    
+  </script>
+  </head>
+  
+  <body>
+    <script src="js/bootstrap.js"></script>
+    <!-- header -->
+    <div class="container-fluid">
+      <div class="header">
+        <div class="menu_up">
+          <ul>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_gio_hang.svg" alt="" /> Giỏ hàng
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_dang_nhap.svg" alt="" /> Đăng nhập
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_heart_header.svg" alt="" /> Yêu
+                thích
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_tim_cua_hang.svg" alt="" /> Tìm
+                đơn hàng</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="Image_header1/icon_tra_cuu_don_hang.svg" /> Tra cứu
+                đơn hàng</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu_down">
+          <ul>
+            <li class="logo">
+              <a href="#"><img src="Image_header1/Logo_Ananas_Header.svg" /></a>
+            </li>
+            <li><a href="#">SẢN PHẨM</a></li>
+            <li><a href="#">NAM</a></li>
+            <li><a href="#">NỮ</a></li>
+            <li><a href="#">SALE OFF</a></li>
+            <li>
+              <a href=""><img src="Image_header1/DiscoverYOU.svg" /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <img src="Image_header1/icon_tim_kiem.svg" alt="" />
+          <input type="text" placeholder="Tìm kiếm" />
+        </div>
+      </div>
+
+      <div class="hot-new">
+        <div
+          id="carouselExampleform-control"
+          class="carousel w-50 mx-auto"
+          data-ride="carousel">
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleform-control"
+            role="button"
+            data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <p>BUY 2 GET 10% OFF - ÁP DỤNG VỚI TẤT CẢ BASIC TEE</p>
+            </div>
+            <div class="carousel-item">
+              <p>FREE SHIPPING VỚI HOÁ ĐƠN TỪ 800K !</p>
+            </div>
+            <div class="carousel-item">
+              <p>HÀNG 2 TUẦN NHẬN ĐỔI - GIÀY NỬA NĂM BẢO HÀNH</p>
+            </div>
+            <div class="carousel-item">
+              <p>BUY MORE PAY LESS - ÁP DỤNG KHI MUA PHỤ KIỆN</p>
+            </div>
+          </div>
+
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleform-control"
+            role="button"
+            data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </div>
+      </div>
+      <!-- container -->
+      <div class="container">
+        <div class="rowt">
+            <div class="left">
+                <div class="row-left-type">
+                    <ul>
+                        <li> <a href="#">TẤT CẢ</a></li>
+                        <li> <a href="#">NAM</a></li>
+                        <li> <a href="#">NỮ</a></li>
+                    </ul>
+                </div>
+                <hr>
+                <div id="tab_content">
+                    <ul>
+                        <li> <a href="#">Accessories | Phụ kiện</a></li>
+                        <li> <a href="#">Footwear | Lên chân</a></li>
+                        <li> <a href="#">Top | Nửa trên</a></li>
+                    </ul>
+                </div>
+                <div style="clear: both;"></div>
+                <hr>
+                <div class="row_tree">
+                    <ul>
+                        <li class="myText"><label class="lv1">TRẠNG THÁI</label> 
+                            <ul class="drop-content">
+                                <li> <a href="#">Limited Edition</a></li>
+                                <li> <a href="#">Online Only</a></li>
+                                <li> <a href="#">Sale off</a></li>
+                                <li> <a href="#">New Arival</a></li>
+                            </ul>
+                        </li>
+                        <li> <hr></li>
+                        <li class="myText"><label class="lv1">KIỂU DÁNG</label> 
+                            <ul class="drop-content">
+                                <li> <a href="#">Low Top</a></li>
+                                <li> <a href="#">High Top</a></li>
+                                <li> <a href="#">Mid Top</a></li>
+                                <li> <a href="#">Mule</a></li>
+                            </ul>
+                        </li>
+                        <li> <hr></li>
+                        <li class="myText"><label class="lv1">DÒNG SẢN PHẨM</label> 
+                            <ul class="drop-content">
+                                <li> <a href="#">Basas</a></li>
+                                <li> <a href="#">Vintas</a></li>
+                                <li> <a href="#">Urbas</a></li>
+                                <li> <a href="#">Pattas</a></li>
+                                <li> <a href="#">Tote Bag</a></li>
+                                <li> <a href="#">Socks | Vớ</a></li>
+                                <li> <a href="#">Hat</a></li>
+                                <li> <a href="#">Track 6</a></li>
+                                <li> <a href="#">Shoelaces</a></li>
+                            </ul>
+                        </li>
+                        <li> <hr></li>
+                        <li class="myText"><label class="lv1">GIÁ</label> 
+                            <ul class="drop-content">
+                                <li> <a href="#">500k - 599k</a></li>
+                                <li> <a href="#">> 600k</a></li>
+                                <li> <a href="#">400k - 499k</a></li>
+                                <li> <a href="#">300k - 399k</a></li>
+                                <li> <a href="#">200k - 299k</a></li>
+                                <li> <a href="#">< 200k</a></li>
+                            </ul>
+                        </li>
+                        <li> <hr></li>
+                        <li>BỘ SƯU TẬP</li>
+                        <li> <hr></li>
+                        <li>SIZE SẢN PHẨM KHÁC</li>
+                        <li> <hr></li>
+                        <li>CHẤT LIỆU</li>
+                        <li> <hr></li>
+                        <li>SIZE GIÀY</li>
+                        <li> <hr></li>
+                        <li>MÀU SẮC</li>
+                        <li> <hr></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+              <div class="row-right-type">
+                  <img src="bia1.jpg" alt="bia1">
+              </div>
+              <div class="row-tree-right">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="1.jpg" onmouseover="changeImage(this, '11.jpg')" onmouseout="changeImage(this, '1.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas Corluray Mix - High Top</h3>
+                                <h3 class="name">Corluray Mix</h3>
+                                <h3 class="T">610.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="2.jpg" onmouseover="changeImage(this, '22.jpg')" onmouseout="changeImage(this, '2.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas Corluray Mix - Low Top</h3>
+                                <h3 class="name">Corluray Mix</h3>
+                                <h3 class="T">650.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="3.jpg" onmouseover="changeImage(this, '33.jpg')" onmouseout="changeImage(this, '3.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Jazico - High Top</h3>
+                                <h3 class="name">Royal White</h3>
+                                <h3 class="T">780.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-tree-right">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="4.jpg" onmouseover="changeImage(this, '44.jpg')" onmouseout="changeImage(this, '4.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Jazico - Low Top</h3>
+                                <h3 class="name">Royal White</h3>
+                                <h3 class="T">720.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="5.jpg" onmouseover="changeImage(this, '55.jpg')" onmouseout="changeImage(this, '5.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Track 6 Jazico - Low Top</h3>
+                                <h3 class="name">Royal White</h3>
+                                <h3 class="T">1.190.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="6.jpg" onmouseover="changeImage(this, '66.jpg')" onmouseout="changeImage(this, '6.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Track 6 I.S.E.E</h3>
+                                <h3 class="name">Pure White/Icy Blue</h3>
+                                <h3 class="T">1.490.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-tree-right">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="7.jpg" onmouseover="changeImage(this, '77.jpg')" onmouseout="changeImage(this, '7.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Soda Pop - Low Top</h3>
+                                <h3 class="name">Emerald</h3>
+                                <h3 class="T">680.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="8.jpg" onmouseover="changeImage(this, '88.jpg')" onmouseout="changeImage(this, '8.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Soda Pop - High Top</h3>
+                                <h3 class="name">Red Violet</h3>
+                                <h3 class="T">720.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="9.jpg" onmouseover="changeImage(this, '99.jpg')" onmouseout="changeImage(this, '9.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Soda Pop - Low Top</h3>
+                                <h3 class="name">Amparo Blue</h3>
+                                <h3 class="T">680.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+            <div class="row-tree-right">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="10.jpg" onmouseover="changeImage(this, '101.jpg')" onmouseout="changeImage(this, '10.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas Love+ 22 - High Top</h3>
+                                <h3 class="name">Rustic</h3>
+                                <h3 class="T">850.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="a.jpg" onmouseover="changeImage(this, 'aa.jpg')" onmouseout="changeImage(this, 'a.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Landforms - Low Top</h3>
+                                <h3 class="name">Marmalade</h3>
+                                <h3 class="T">720.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="b.jpg" onmouseover="changeImage(this, 'bb.jpg')" onmouseout="changeImage(this, 'b.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Landforms - Low Top</h3>
+                                <h3 class="name">Rain Drum</h3>
+                                <h3 class="T">720.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+            <div class="row-tree-right">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="c.jpg" onmouseover="changeImage(this, 'cc.jpg')" onmouseout="changeImage(this, 'c.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas SC - Mule</h3>
+                                <h3 class="name">Aloe Wash</h3>
+                                <h3 class="T">580.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="d.jpg" onmouseover="changeImage(this, 'dd.jpg')" onmouseout="changeImage(this, 'd.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas SC - Mule</h3>
+                                <h3 class="name">Dusty Blue</h3>
+                                <h3 class="T">580.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="e.jpg" onmouseover="changeImage(this, 'ee.jpg')" onmouseout="changeImage(this, 'e.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas SC - Mule</h3>
+                                <h3 class="name">Fair Orchid</h3>
+                                <h3 class="T">580.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+            <div class="row-tree-right">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="f.jpg" onmouseover="changeImage(this, 'ff.jpg')" onmouseout="changeImage(this, 'f.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas Irrelevant NE - Low Top</h3>
+                                <h3 class="name">Antarctica/Red Orange</h3>
+                                <h3 class="T">650.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="g.jpg" onmouseover="changeImage(this, 'gg.jpg')" onmouseout="changeImage(this, 'g.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Vintas Mister NE - High Top</h3>
+                                <h3 class="name">Chocolate Brown</h3>
+                                <h3 class="T">650.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="thumb">
+                        <div class="product">
+                            <div class="image-container">
+                                <a href="#">
+                                    <img src="h.jpg" onmouseover="changeImage(this, 'hh.jpg')" onmouseout="changeImage(this, 'h.jpg')">
+                                    <span class="buy-now">MUA NGAY</span>
+                                </a> 
+                            </div>
+                            <div class="caption">
+                                <h3 class="mau">Urbas Retrospective - Mid Top</h3>
+                                <h3 class="name">Popular Blue</h3>
+                                <h3 class="T">720.000 VND</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                 
+          </div>
+          </div>
+        </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="rowx">
+            <div class="col-3">
+                <div class="rowxcenter">
+                    <img src="shop.svg" alt="shop">
+                </div>
+                <br>
+                <div class="rowxt">
+                    <a class="shop" href="#">TÌM CỦA HÀNG</a>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="rowsecon">
+                    <div class="col3">
+                        <a href="#">
+                            <h4>SẢN PHẨM</h4>
+                        </a>
+                        <ul>
+                            <li><a href="#">Giày Nam</a></li>
+                            <li><a href="#">Giày Nữ</a></li>
+                            <li><a href="#">Thời trang &amp; Phụ kiện</a></li>
+                            <li><a href="#">Sale-off</a></li>
+                        </ul>
+                    </div>
+                    <div class="col3">
+                        <a href="#">
+                            <h4>VỀ CÔNG TY</h4>
+                        </a>
+                        <ul>
+                            <li><a href="#">Dứa tuyển dụng</a></li>
+                            <li><a href="#">Liên hệ nhượng quyền</a></li>
+                            <li><a href="#">Về Ananas</a></li>
+                        </ul>
+                    </div>
+                    <div class="col3">
+                        <a href="#">
+                            <h4>HỖ TRỢ</h4>
+                        </a>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Bảo mật thông tin</a></li>
+                            <li><a href="#">Chính sách chung</a></li>
+                            <li><a href="#">Tra cứu đơn hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="col3">
+                        <a href="#"><h4>LIÊN HỆ</h4></a>
+                        <ul>
+                            <li><a href="#">Email góp ý</a></li>
+                            <li><a href="">Hotline</a></li>
+                            <li><a href="">0963 429 749</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rowthree">
+                    <div class="col3">
+                        <h4>ANANAS SOCIAL</h4>
+                        <a href="https://www.facebook.com/Ananas.vietnam/"><img src="fb.svg"></a>&nbsp;
+                        <a href="https://www.instagram.com/ananasvn/"><img src="ig.svg"></a>&nbsp;
+                        <a href="https://www.youtube.com/discoveryou"><img src="ytb.svg"></a>
+                    </div>
+                    <div class="col3">
+                        <h4>ĐĂNG KÝ NHẬN MAIL</h4>
+                        <div class="formgroup">
+                            <input type="email" class="formMail" id="">
+                            <a href="#" class="subscribe"><img src="mui.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="col6">
+                        <a href="#"><img src="logofooter.svg"></a>
+                    </div>
+                </div>
+                <div class="rowfour">
+                    <div class="col3">
+                        <a href="#"><img src="end.png"></a>
+                    </div>
+                    <div class="col9">
+                        Copyright © 2022 Ananas. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
