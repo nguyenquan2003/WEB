@@ -1,0 +1,367 @@
+﻿@{ ViewBag.Title = "Index";
+                Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Quản lý người dùng</h2>
+<button class="btn btn-warning m-2" type="button" id="btnGetNguoiDungs">Lấy thông người dùng</button>
+
+<div class="container w-75 text-center">
+    <table class="table table-bordered table-responsive m-2" id="nguoiDungTable">
+        <tr>
+            <th>
+                Mã Người Dùng
+            </th>
+            <th>
+                Tên Người Dùng
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Liên kết
+            </th>
+        </tr>
+    </table>
+</div>
+
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">NGƯỜI DÙNG</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <td>Mã Người Dùng</td>
+                        <td><span id="maNguoiDungSpan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tên Người Dùng</td>
+                        <td><span id="tenNguoiDungSpan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><span id="eMailSpan"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-group bg-gray-200">
+    <div class="card">
+        <div class="card-header alert-secondary text-white">
+            Người dùng mới
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="col-12">
+                    <label for="tenNguoiDung">Tên Người Dùng</label>
+                    <input type="text" class="form-control" placeholder="Tên người dùng" id="txttenNguoiDung" />
+                </div>
+                <div class="col-12">
+                    <label for="matKhau">Mật khẩu</label>
+                    <input type="password" class="form-control" placeholder="Mật khẩu" id="txtmatKhau" />
+                </div>
+                <div class="col-12">
+                    <label for="eMail">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" id="txteMail" />
+                </div>
+                <div class="col-12">
+                    <label for="dienThoai">Điện thoại</label>
+                    <input type="text" class="form-control" placeholder="Điện thoại" id="txtdienThoai" />
+                </div>
+                <div class="col-12">
+                    <label for="diaChi">Địa chỉ</label>
+                    <input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiaChi" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer alert-success">
+            <button type="button" id="btnInsertNguoiDung" class="btn btn-warning">SAVE</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header alert-warning text-white">
+            Cập nhật người dùng
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="col-12">
+                    <label for="maNguoiDungUpdate">Mã Người Dùng</label>
+                    <input type="text" class="form-control" placeholder="Mã người dùng" id="txtmaNguoiDungUpdate" disabled="disabled" />
+                </div>
+                <div class="col-12">
+                    <label for="tenNguoiDungUpdate">Tên Người Dùng</label>
+                    <input type="text" class="form-control" placeholder="Tên người dùng" id="txttenNguoiDungUpdate" />
+                </div>
+                <div class="col-12">
+                    <label for="matKhauUpdate">Mật khẩu</label>
+                    <input type="password" class="form-control" placeholder="Mật khẩu" id="txtmatKhauUpdate" />
+                </div>
+                <div class="col-12">
+                    <label for="eMailUpdate">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" id="txteMailUpdate" />
+                </div>
+                <div class="col-12">
+                    <label for="dienThoaiUpdate">Điện thoại</label>
+                    <input type="text" class="form-control" placeholder="Điện thoại" id="txtdienThoaiUpdate" />
+                </div>
+                <div class="col-12">
+                    <label for="diaChiUpdate">Địa chỉ</label>
+                    <input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiaChiUpdate" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer alert-success">
+            <button type="button" id="btnUpdateNguoiDung" class="btn btn-warning">SAVE</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">NGƯỜI DÙNG</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Bạn có chắc chắn xóa người dùng này?</h5>
+                <table class="table">
+                    <tr>
+                        <td>Mã Người Dùng</td>
+                        <td><span id="deletemaNguoiDungspan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tên Người Dùng</td>
+                        <td><span id="deletetenNguoiDungspan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><span id="deleteeMailspan"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btnDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $('#btnGetNguoiDungs').click(() => {
+        getNguoiDungs();
+    });
+
+    function getNguoiDungs() {
+        $('#nguoiDungTable tbody').empty();
+        $('#nguoiDungTable tbody').append('<tr><th>Mã Người Dùng</th><th>Tên Người Dùng</th><th>Email</th><th>Liên kết</th><th></th></tr>');
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/NguoiDung',
+            success: (responses) => {
+                for (var i = 0; i < responses.length; i++) {
+                    const nguoiDungRow = responses[i];
+                    const strHTML = `<tr>
+                                        <td>${nguoiDungRow.maNguoiDung}</td>
+                                        <td>${nguoiDungRow.tenNguoiDung}</td>
+                                        <td>${nguoiDungRow.eMail}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info btnViewND" data-bs-toggle="modal" data-bs-target="#userModal" data-idnd="${nguoiDungRow.maNguoiDung}">View</button>
+                                            <button type="button" class="btn btn-warning btnUpdateND" data-idnd="${nguoiDungRow.maNguoiDung}">Edit</button>
+                                            <button type="button" class="btn btn-danger btnDeleteND" data-bs-toggle="modal" data-bs-target="#deleteModal" data-idnd="${nguoiDungRow.maNguoiDung}">Delete</button>
+                                        </td>
+                                     </tr>`;
+                    $('#nguoiDungTable').append(strHTML);
+                }
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $(document).on('click', '.btnViewND', function () {
+        const userId = $(this).data('idnd');
+        viewNguoiDung(userId);
+    });
+
+    function viewNguoiDung(id) {
+        $.ajax({
+            type: 'GET',
+            url: `/api/NguoiDung?id=${id}`,
+            success: (response) => {
+                const userInfoHTML = `
+<table class="table">
+                        <tr>
+                            <td>Mã Người Dùng</td>
+                            <td>${response.maNguoiDung}</td>
+                        </tr>
+                        <tr>
+                            <td>Tên Người Dùng</td>
+                            <td>${response.tenNguoiDung}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>${response.eMail}</td>
+                        </tr>
+                        <tr>
+                            <td>Điện Thoại</td>
+                            <td>${response.dienThoai}</td>
+                        </tr>
+                        <tr>
+                            <td>Địa Chỉ</td>
+                            <td>${response.diaChi}</td>
+                        </tr>
+                    </table>
+                `;
+                $('#userModal .modal-body').html(userInfoHTML);
+                $('#userModal').modal('show');
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $('#btnInsertNguoiDung').click(() => {
+        insertNguoiDung();
+    });
+
+    function insertNguoiDung() {
+        const tenNguoiDung = $('#txttenNguoiDung').val();
+        const matKhau = $('#txtmatKhau').val();
+        const eMail = $('#txteMail').val();
+        const dienThoai = $('#txtdienThoai').val();
+        const diaChi = $('#txtdiaChi').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/NguoiDung',
+            data: {
+                'tenNguoiDung': tenNguoiDung,
+                'matKhau': matKhau,
+                'eMail': eMail,
+                'dienThoai': dienThoai,
+                'diaChi': diaChi
+            },
+            success: (response) => {
+                $('#txttenNguoiDung').val('');
+                $('#txtmatKhau').val('');
+                $('#txteMail').val('');
+                $('#txtdienThoai').val('');
+                $('#txtdiaChi').val('');
+                getNguoiDungs();
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $(document).on('click', '.btnUpdateND', function () {
+        const maNguoiDung = $(this).data('idnd');
+        updateNguoiDungView(maNguoiDung);
+    });
+
+    function updateNguoiDungView(id) {
+        $.ajax({
+            type: 'GET',
+            url: `/api/NguoiDung?id=${id}`,
+            success: (response) => {
+                $('#txtmaNguoiDungUpdate').val(response.maNguoiDung);
+                $('#txttenNguoiDungUpdate').val(response.tenNguoiDung);
+                $('#txtmatKhauUpdate').val(response.matKhau);
+                $('#txteMailUpdate').val(response.eMail);
+                $('#txtdienThoaiUpdate').val(response.dienThoai);
+                $('#txtdiaChiUpdate').val(response.diaChi);
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $('#btnUpdateNguoiDung').click(() => {
+        updateNguoiDung();
+    });
+
+    function updateNguoiDung() {
+        const maNguoiDung = $('#txtmaNguoiDungUpdate').val();
+        const tenNguoiDung = $('#txttenNguoiDungUpdate').val();
+        const matKhau = $('#txtmatKhauUpdate').val();
+        const eMail = $('#txteMailUpdate').val();
+        const dienThoai = $('#txtdienThoaiUpdate').val();
+        const diaChi = $('#txtdiaChiUpdate').val();
+
+        $.ajax({
+            type: 'PUT',
+            url: `/api/NguoiDung/${maNguoiDung}`,
+            contentType: 'application/json',
+            data: JSON.stringify({
+                maNguoiDung: maNguoiDung,
+                tenNguoiDung: tenNguoiDung,
+                matKhau: matKhau,
+                eMail: eMail,
+                dienThoai: dienThoai,
+                diaChi: diaChi
+            }),
+            success: (response) => {
+                $('#txtmaNguoiDungUpdate').val('');
+                $('#txttenNguoiDungUpdate').val('');
+                $('#txtmatKhauUpdate').val('');
+                $('#txteMailUpdate').val('');
+                $('#txtdienThoaiUpdate').val('');
+                $('#txtdiaChiUpdate').val('');
+
+                getNguoiDungs();
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $(document).on('click', '.btnDeleteND', function () {
+        const userId = $(this).data('idnd');
+        deleteNguoiDungView(userId);
+    });
+
+    function deleteNguoiDungView(id) {
+        $.ajax({
+            type: 'GET',
+            url: `/api/NguoiDung?id=${id}`,
+            success: (response) => {
+                $('#deletemaNguoiDungspan').html(response.maNguoiDung);
+                $('#deletetenNguoiDungspan').html(response.tenNguoiDung);
+                $('#deleteeMailspan').html(response.eMail);
+
+                $('#deleteModal').modal('show');
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $('#btnDelete').click(() => {
+        deleteNguoiDung();
+    });
+
+    function deleteNguoiDung() {
+        const userId = $('#deletemaNguoiDungspan').html();
+
+        $.ajax({
+            type: 'DELETE',
+            url: `/api/NguoiDung?id=${userId}`,
+            success: (response) => {
+                getNguoiDungs();
+            },
+            error: (err) => { console.log(err); }
+        });
+    }
+
+    $(document).ready(() => {
+        getNguoiDungs();
+    });
+</script>

@@ -1,0 +1,117 @@
+﻿@model WEBGIAY.Models.nguoiDung
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    var useReg = Session["useReg"] as WEBGIAY.Models.nguoiDung;
+}
+
+<style>
+    .Name_Form {
+        text-align: center;
+        font-size: 25px;
+        padding: 35px 15px;
+        color: black;
+        font-weight: bolder;
+        text-shadow: 2px 2px 4px black;
+    }
+
+    .form-group {
+        font-size: 18px;
+    }
+</style>
+
+<div class="container-fluid mx-auto" style="background-image: url(/Image/Image/br_dangky.jpg); min-height: 700px;">
+
+    <div class="container w-25 py-5" style="background-color: #efe9e9; border-radius: 15px; opacity: 0.9; ">
+
+        @using (Html.BeginForm("Dangky", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+        <form class="form container">
+            <div class="Name_Form">
+                ĐĂNG KÝ TÀI KHOẢN
+            </div>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger  m-2" })
+            <div class="row">
+                <div class=" col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.tenNguoiDung, "Người dùng", htmlAttributes: new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.tenNguoiDung, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tenNguoiDung, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.matKhau, "Mật khẩu", htmlAttributes: new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.matKhau, new { htmlAttributes = new { type = "Password", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.matKhau, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.eMail, "Email", htmlAttributes: new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.eMail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.eMail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.dienThoai, "Số điện thoại", htmlAttributes: new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.dienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dienThoai, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.diaChi, "Địa Chỉ", htmlAttributes: new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="text-center">
+                    <input type="submit" value="ĐĂNG KÝ" class="btn btn-warning" />
+                </div>
+            </div>
+
+            @{ if (ViewBag.isReg == true)
+                {
+                    <div class="row justify-content-center">
+                        <a class=" btn btn-warning" style="color:white" href="/User/Dangnhap"> ĐĂNG NHẬP</a>
+                    </div>
+                }
+            }
+        </form>
+       }
+
+    </div>
+
+</div>
+
+

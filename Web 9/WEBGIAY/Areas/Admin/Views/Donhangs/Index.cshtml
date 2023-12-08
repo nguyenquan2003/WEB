@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WEBGIAY.Models.donHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Danh sách đơn hàng</h2>
+
+<div class="container-md">
+    <table class="table">
+        <tr>
+            <th>
+                Họ tên khách hàng
+            </th>
+            <th>
+                Ngày đặt hàng
+            </th>
+            <th>
+                Tình trạng đơn hàng
+            </th>
+            <th>
+                Hình thức thanh toán
+            </th>
+            <th>
+                Địa chỉ nhận hàng
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nguoiDung.tenNguoiDung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngayDat)
+                </td>
+                <td>
+                    @{ if (@item.tinhTrang == 0)
+                        {
+                            <h5 style="color:red">Đang chờ xác nhận. </h5> }
+                        else if (@item.tinhTrang == 1)
+                        {
+                            <h5 style="color:green">Đã xác nhận  </h5> }
+                        else
+                        {
+                            <h5 style="color:orangered">Đang chờ xác nhận </h5> } }
+                </td>
+                <td>
+                    @{ if (@item.thanhToan == 1)
+                        {
+                            <div style="color:red">Thanh toán tiền mặt</div> }
+                        else if (@item.thanhToan == 2)
+                        {
+                            <div style="color:brown">Thanh toán chuyển khoản</div> } }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diaChiNhanHang)
+                </td>
+                <td>
+
+                    <button class="btn btn-warning">
+                        @Html.ActionLink("Chi tiết", "Details", new { id = item.maDon }, new { @style = "color:white;" })
+                    </button>
+
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

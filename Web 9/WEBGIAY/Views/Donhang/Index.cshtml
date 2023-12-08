@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WEBGIAY.Models.donHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<br />
+
+<div class="container-fluid w-100 text-xl-center" style="font-size:35px;color:red; font-weight: bold;">DANH SÁCH ĐƠN HÀNG</div>
+
+<table class="container w-75 table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+
+        <th>
+            Tình trạng đơn hàng
+        </th>
+        <th>
+            Thanh toán
+        </th>
+        <th>
+            Địa chỉ nhận hàng
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nguoiDung.tenNguoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayDat)
+            </td>
+            <td>
+                @{ if (@item.tinhTrang == 0)
+                    {
+                        <h5 style="color:red">Đang chờ xác nhận. </h5> }
+                    else if (@item.tinhTrang == 1)
+                    {
+                        <h5 style="color:green">Đã xác nhận </h5> }
+                    else
+                    {
+                        <h5 style="color:orangered">Đang chờ xác nhận </h5> } }
+            </td>
+            <td>
+                @{ if (@item.thanhToan == 1)
+                    {
+                        <div style="color:red">Thanh toán tiền mặt</div> }
+                    else if (@item.thanhToan == 2)
+                    {
+                        <div style="color:brown">Thanh toán chuyển khoản</div> } }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diaChiNhanHang)
+            </td>
+            <td>
+                <button class="btn btn-warning">
+                    @Html.ActionLink("Chi Tiết", "Details", new { id = item.maDon }, new { @class = "text-white" })
+                </button>
+
+            </td>
+        </tr>
+    }
+
+</table>

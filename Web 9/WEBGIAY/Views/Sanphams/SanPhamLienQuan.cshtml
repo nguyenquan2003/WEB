@@ -1,0 +1,32 @@
+﻿@model List<WEBGIAY.Models.sanPham>
+
+<div class="container w-100">
+    <div class="container py-2">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-lg-2 zoomdiv card" style="width: 15rem; padding-bottom: 15px;">
+                    <div>
+                        <a href="@Url.Action("ChiTiet",new {id=item.maSanPham})">
+                            <img class="card-img-top" src="/Asset/images/@item.hinhAnh">
+                        </a>
+                    </div>
+
+                    <div class="card-link text-center">
+                        <h5 class="card-text">---------------------------</h5>
+                        <h5 class="card-title">
+                            <a href="@Url.Action("ChiTiet",new {id=item.maSanPham})">@item.tenSanPham</a>
+                        </h5>
+                        <h5 class="card-title">
+                            Loại sản phẩm : @item.loaiSanPham.tenLoaiSP
+                        </h5>
+                        <h5 class="card-text">
+                            Giá Bán: <span style="color:red">@String.Format("{0:0,0}", item.gia) đ</span>
+                        </h5>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,116 @@
+﻿@using WEBGIAY.Models;
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<style>
+    .input-group-prepend,
+    .input-group-append {
+        display: flex;
+    }
+
+        .input-group-append button,
+        .input-group-prepend button {
+            height: 38px; /* Adjust the height as needed */
+        }
+</style>
+
+<div style="min-height:500px">
+    <div class="container-fluid w-100 text-xl-center" style="font-size:35px;color:red; font-weight: bold;"> GIỎ HÀNG <i class="fa fa-shopping-cart"></i></div>
+
+    <div class="container-md mx-auto">
+        <table class="table fs-5">
+            <tr>
+                <th>ẢNH</th>
+
+                <th>TÊN SẢN PHẨM</th>
+
+                <th>ĐƠN GIÁ</th>
+
+                <th>SỐ LƯỢNG</th>
+
+                <th>THÀNH TIỀN</th>
+            </tr>
+            @{int i = 1; double totPrice = 0; }
+            @foreach (var item in Model)
+            {
+                <tr class="font-italic">
+                    <td><img src="~/Asset/images/@item.sAnhBia" width="150" height="50" /></td>
+
+                    <td>@item.sTensp</td>
+
+                    <td class="text-warning">@String.Format("{0:0,0}", item.dDonGia) VNĐ</td>
+
+                    @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMaSP = item.iMasp }, FormMethod.Post, new { id = "form_" + item.iMasp }))
+                    {
+                        <td>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="decrement(@item.iMasp)">-</button>
+                                </div>
+                                @Html.TextBox("txtSoLuong", item.iSoLuong, new { @class = "form-control text-center", @min = 1, @style = "width: 60px;", @id = "txtSoLuong_" + item.iMasp })
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="increment(@item.iMasp)">+</button>
+                                </div>
+                            </div>
+                        </td>
+                    }
+
+
+                    <td class="text-warning">@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+
+                    <td>
+                        @{
+                            double Price = item.ThanhTien;
+                            totPrice += Price;
+                        }
+                        @Price.ToString("N0") VNĐ
+                    </td>
+
+                    <td>
+                        <button class="btn btn-outline-dark">
+                            @Html.ActionLink(" ", "XoaGioHang", new { @iMaSP = item.iMasp }, new { @class = "fa-solid fa-trash" })
+                        </button>
+                    </td>
+                </tr>
+
+            }
+        <tr>
+            <td colspan="4" class="text-center fw-bold">TỔNG TIỀN</td>
+            <td class="text-danger">@totPrice.ToString("N0") VNĐ VNĐ</td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="container w-25 mx-auto fs-3">
+        <div class="row">
+            <div class="col-8">
+                <a class="btn btn-warning" href="/SanPhams/Index">QUAY VỀ TRANG CHỦ</a>
+            </div>
+            <div class="col-4">
+                @using (Html.BeginForm("ThanhToanDonHang", "GioHang", new { @class = "" }))
+                {
+                    <input type="submit" value="ĐẶT HÀNG" class="btn btn-warning" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function increment(iMasp) {
+        var currentValue = parseInt($('#txtSoLuong_' + iMasp).val(), 10);
+        $('#txtSoLuong_' + iMasp).val(currentValue + 1);
+        $('#form_' + iMasp).submit();
+    }
+
+    function decrement(iMasp) {
+        var currentValue = parseInt($('#txtSoLuong_' + iMasp).val(), 10);
+        if (currentValue > 1) {
+            $('#txtSoLuong_' + iMasp).val(currentValue - 1);
+            $('#form_' + iMasp).submit();
+        }
+    }
+</script>

@@ -1,0 +1,15 @@
+﻿@model WEBGIAY.Models.loaiSanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2  class="card-header text-xl-center justify-content-xl-center">Chi tiết</h2>
+
+<div>
+    <h4 class="card-group">Loại sản phẩm:  @Html.DisplayFor(model => model.tenLoaiSP)</h4>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.maLoaiSP }, new {@class = "btn btn-success btn-lg" })
+</p>

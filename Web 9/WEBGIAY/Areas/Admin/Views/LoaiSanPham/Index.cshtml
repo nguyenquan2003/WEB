@@ -1,0 +1,227 @@
+﻿@model IEnumerable<WEBGIAY.Models.loaiSanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Phân loại sản phẩm</h2>
+
+<button class="btn btn-warning m-2" type="button" id="btnGetLoaiSanPhams">Lấy thông tin loại sản phẩm</button>
+
+<div class="container w-75 text-center">
+    <table class="table table-bordered table-responsive m-2 loaiTable">
+        <tr>
+            <th>
+                Mã loại sản phẩm
+            </th>
+            <th>
+                Tên loại sản phẩm
+            </th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">LOẠI SẢN PHẨM</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <td>Mã loại sản phẩm</td>
+                        <td><span id="maLoaiSPspan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tên loại sản phẩm</td>
+                        <td><span id="tenLoaiSPspan"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-group bg-gray-200">
+    <div class="card">
+        <div class="card-header alert-secondary text-white">
+            Loại sản phẩm mới
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="col-12">
+                    <label for="tenLoaiSP">Tên Loại Sản Phẩm</label>
+                    <input type="text" class="form-control" placeholder="Tên loại" id="txttenLoaiSP" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer alert-success">
+            <button type="button" id="btnInsert" class="btn btn-warning">SAVE</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header alert-warning text-white">
+            Cập nhật loại sản phẩm
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="col-12">
+                    <label for="maLoaiSP">Mã Loại Sản Phẩm</label>
+                    <input type="text" class="form-control" placeholder="Mã loại" id="txtmaLoaiSPUpdate" disabled="disabled" />
+                </div>
+                <div class="col-12">
+                    <label for="tenLoaiSP">Tên Loại Sản Phẩm</label>
+                    <input type="text" class="form-control input-group" placeholder="Tên loại" id="txttenLoaiSPUpdate" />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer alert-success">
+            <button type="button" id="btnUpdate" class="btn btn-warning">SAVE</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">LOẠI SẢN PHẨM</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Bạn có chắc chắn xóa loại sản phẩm này?</h5>
+                <table class="table">
+                    <tr>
+                        <td>Mã loại sản phẩm</td>
+                        <td><span id="deletemaLoaiSPspan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tên loại sản phẩm</td>
+                        <td><span id="deletetenLoaiSPspan"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btnDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $('#btnGetLoaiSanPhams').click(() => {
+        $('.loaiTable tbody').empty();
+        $('.loaiTable tbody').append('<tr><th>Mã loại sản phẩm</th><th>Tên loại sản phẩm</th><th></th></tr>');
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/LoaiSanPham',
+            success: (responses) => {
+                for (var i = 0; i < responses.length; i++) {
+                    const loaiRow = responses[i];
+                    const strHTML = '<tr><td>' + loaiRow.maLoaiSP + '</td><td>' + loaiRow.tenLoaiSP + '</td><td><button type="button" class="btn btn-primary btnViewLSP" data-bs-toggle="modal" data-bs-target="#exampleModal" data-idlsp="' + loaiRow.maLoaiSP + '">View</button> <button type="button" class="btn btn-primary btnUpdateLSP" data-idlsp="' + loaiRow.maLoaiSP + '">Edit</button> <button type="button" class="btn btn-primary btnDeleteLSP" data-bs-toggle="modal" data-bs-target="#deleteModal" data-idlsp="' + loaiRow.maLoaiSP + '">Delete</button></td></tr>';
+                    $('.loaiTable').append(strHTML);
+                }
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+
+    $(document).on('click', '.btnViewLSP', (event) => {
+        const lid = $(event.target).attr('data-idlsp');
+        $.ajax({
+            type: 'GET',  // Fix: Use a colon, not an equal sign
+            url: `/api/LoaiSanPham?id=${lid}`,
+            success: (response) => {
+                $('#maLoaiSPspan').html(response.maLoaiSP);  // Fix: Use .html() instead of .htm()
+                $('#tenLoaiSPspan').html(response.tenLoaiSP);  // Fix: Use .html() instead of .htm()
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+
+    $('#btnInsert').click(() => {
+        const tenLoaiSP = $('#txttenLoaiSP').val();
+        $.ajax({
+            type: 'POST',
+            url: '/api/LoaiSanPham',
+            data: { 'tenLoaiSP': tenLoaiSP },
+            success: (response) => {
+                $('#txttenLoaiSP').val('');
+                $('#btnGetLoaiSanPhams').trigger('click');
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+
+    $(document).on('click', '.btnUpdateLSP', (event) => {
+        const lid = $(event.target).attr('data-idlsp');
+        $.ajax({
+            type: 'GET',
+            url: `/api/LoaiSanPham?id=${lid}`,
+            success: (response) => {
+                $('#txtmaLoaiSPUpdate').val(response.maLoaiSP);
+                $('#txttenLoaiSPUpdate').val(response.tenLoaiSP);
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+
+    $('#btnUpdate').click(() => {
+        const maLoaiSP = $('#txtmaLoaiSPUpdate').val();
+        const tenLoaiSP = $('#txttenLoaiSPUpdate').val();
+        $.ajax({
+            type: 'PUT',
+            url: `/api/LoaiSanPham?id=${maLoaiSP}`,
+            data: { 'maLoaiSP': maLoaiSP, 'tenLoaiSP': tenLoaiSP },
+            success: (response) => {
+                $('#txtmaLoaiSPUpdate').val('');
+                $('#txttenLoaiSPUpdate').val('');
+
+                $('#btnGetLoaiSanPhams').trigger('click');
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+
+    //DELETE
+    $(document).on('click', '.btnDeleteLSP', (event) => {
+        const brid = $(event.target).attr('data-idlsp');
+        $.ajax({
+            type: 'GET',
+            url: `/api/LoaiSanPham?id=${brid}`,
+            success: (response) => {
+                $('#deletemaLoaiSPspan').html(response.maLoaiSP);
+                $('#deletetenLoaiSPspan').html(response.tenLoaiSP);
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+    $('#btnDelete').click(() => {
+        const maLoaiSP = $('#deletemaLoaiSPspan').html();
+
+        $.ajax({
+            type: 'DELETE',
+            url: `/api/LoaiSanPham?id=${maLoaiSP}`,
+            success: (response) => {
+                $('#btnGetLoaiSanPhams').trigger('click');
+            },
+            error: (err) => { console.log(err); }
+        });
+    });
+
+</script>
+
+

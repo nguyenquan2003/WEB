@@ -1,0 +1,63 @@
+﻿@model WEBGIAY.Models.nguoiDung
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Xoá vĩnh viễn người dùng</h2>
+
+
+<div class="container w-50">
+    <dl class="dl-horizontal">
+        <dt> 
+            Tên người dùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenNguoiDung)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eMail)
+        </dd>
+
+        <dt>
+            Điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dienThoai)
+        </dd>
+
+        <dt>
+            Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matKhau)
+        </dd>
+
+        <dt>
+            Tên quyền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phanQuyen.tenQuyen)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions text-center">
+            <input type="submit" value="Xoá" class="btn btn-warning btn-lg" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success btn-lg" })
+        </div>
+    }
+</div>

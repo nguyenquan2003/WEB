@@ -1,0 +1,403 @@
+.container-fluid {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+
+/*Css menu nhỏ trên đầu------------------------------------------------------- */
+
+.menu_up {
+    width: 100%;
+    height: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
+    background-color: #434242;
+    text-align: center;
+    color: #fff;
+    font-family: NunitoSanRegular;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu_up ul {
+    list-style: none;
+    margin-top: 0px;
+}
+
+.menu_up ul li {
+    float: right;
+    padding: 5px;
+}
+
+.menu_up ul li a {
+    color: #fff;
+    line-height: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    padding-right: 10px;
+}
+
+.menu_up ul li a img {
+    vertical-align: middle;
+}
+
+.menu_up ul li a:hover {
+    font-weight: bold;
+    color: #F90;
+}
+
+
+/*Css menu lớn ------------------------------------------------------- */
+
+.menu_down {
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.menu_down ul {
+    list-style: none;
+    margin-top: 0px;
+}
+
+.menu_down ul li {
+    float: left;
+    padding: 20px;
+}
+
+.menu_down ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.menu_down ul li a img {
+    vertical-align: middle;
+}
+
+.logo a img {
+    margin-top: -30px;
+    padding-right: 80px;
+    margin-left: 50px;
+}
+
+.menu_down ul li a:hover {
+    color: #F90;
+}
+
+
+/*Ô tìm  kiếm --------------------------------- */
+
+.search {
+    height: 35px;
+    width: 20%;
+    background-color: #fff;
+    float: right;
+    border: 1px solid #5f5f5f;
+    border-radius: 4px;
+    margin-top: -56px;
+    margin-right: 20px;
+    padding-top: -5px;
+}
+
+.search input {
+    width: 200px;
+    height: 25px;
+    border: #fff;
+    outline: none;
+    border: none;
+}
+
+.search img {
+    width: 20px;
+    height: auto;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.search img input {
+    vertical-align: middle;
+}
+
+
+/* Thanh hot new --------------------------------- */
+
+.hot-new {
+    background-color: #f1f1f1;
+}
+
+
+/* Chuyển trang ảnh nền --------------------------------- */
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel-control-next-icon {
+    background-image: url('next.png');
+    color: #000000;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('back.png');
+    color: #000000;
+}
+
+.carousel-inner {
+    text-align: center;
+    padding-top: 15px;
+    font-family: NunitoSanSBoldI;
+    font-style: italic;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+.container {
+    justify-content: center;
+}
+
+.row {
+    justify-content: center;
+}
+
+.Noidung1 {
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.col-md-4 {
+    position: relative;
+}
+
+
+/* --------------------- Danh mục sản phẩm trong ảnh --------------------- */
+
+.home-buy {
+    max-width: 1200px;
+    padding: 40px 0px 30px 0px;
+}
+
+.home-buy .item .item-bg {
+    position: relative;
+}
+
+.home-buy .item .item-group {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 90%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.home-buy .item .item-group a {
+    display: block;
+    text-align: center;
+    line-height: 1.6rem;
+    text-decoration: none;
+}
+
+.home-buy .item .item-group a.title:active,
+.home-buy .item .item-group a.title {
+    font-family: GeometricExtraBold;
+    font-size: 23px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.home-buy .item .item-group a.title:hover {
+    color: #f15e2c;
+}
+
+.home-buy .item .item-group a.sub:active,
+.home-buy .item .item-group a.sub {
+    font-family: NunitoSanExtraBold;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.home-buy .item .item-group a.sub:hover {
+    color: #f15e2c;
+}
+
+
+/* NỘI DUNG 3 */
+
+.Noidung3 {
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.card-header {
+    text-align: center;
+}
+
+
+/* Footer tim-cua-hang-------------------------------------------------------------------------------------------------------- */
+
+.tim-cua-hang {
+    text-decoration: none;
+    max-width: 100px;
+    background-color: #f15e2c;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-family: GeometricExtraBold;
+    font-size: 23px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #434242;
+    color: #ffffff;
+    display: block;
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.ds-footer {
+    color: #fff;
+    font-family: NunitoSanRegular;
+    text-decoration: none;
+    display: inline-block;
+    /* width: 3rem; */
+    max-width: 3rem;
+}
+
+.ds-footer ul {
+    list-style: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #FFF;
+}
+
+.ds-footer ul li {
+    float: left;
+    line-height: 20px;
+}
+
+.ds-footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    padding-right: 10px;
+}
+
+.ds-footer ul li a:hover {
+    font-weight: bold;
+    color: #F90;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.footer .sec-cont li a,
+.footer .sec-cont li a:active {
+    color: #cccccc;
+    font-family: NunitoSanRegular;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+/* --- CHAT BOX----------------------------------------------------------------------------------------------------- */
+
+.open-button {
+    font-family: NunitoSanRegular;
+    background-color: #F90;
+    color: white;
+    font-size: 20px;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 30px;
+    right: 3px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.form-container .cancel {
+    background-color: red;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+
+/* responsive ----------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 46.1875em) {
+    .menu_down {
+        display: none;
+    }
+    .menu_up {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 46.25em) and (max-width: 63.9375em) {
+    .menu_down {
+        display: none;
+    }
+    .menu_up {
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+﻿@model List<WEBGIAY.Models.loaiSanPham>
+
+<div>
+    <div class="bg-warning">
+        <P class="fs-3 btn btn-warning text-warning-emphasis ">LOẠI SẢN PHẨM</P>
+    </div>
+    
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li><a class="list-group-item list-group-item-action list-group-item-light text-lg-center fs-4" href="/LoaiSanPham/BrandProduct/@item.maLoaiSP">@item.tenLoaiSP</a></li>
+        }
+    </ul>
+</div>
+
+
+<style>
+    .vertical-menu ul {
+        list-style-type: none;
+        margin-left: 200px;
+        padding: 0;
+        background-color: #f3f3f3;
+    }
+
+    .vertical-menu li {
+        border-bottom: 2px solid #000000;
+    }
+
+    .vertical-menu li a {
+        display: block;
+        color: #000000;
+        padding: 15px 15px;
+        text-decoration: none;
+        font-size: 35px;
+    }
+
+    .vertical-menu li a:hover {
+        background-color: #e09e1e;
+        color: rebeccapurple;
+    }
+</style>

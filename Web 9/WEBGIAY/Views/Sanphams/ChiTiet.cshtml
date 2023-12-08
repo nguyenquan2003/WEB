@@ -1,0 +1,177 @@
+﻿@using WEBGIAY.Models
+@model sanPham
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!------------------------------------Product--------------------------------------------------------------------------------------->
+<div class="container">
+    <section class="product">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 hidden-xs hidden-sm">
+                <ol class="breadcrumb">
+                    <li class="active">@Model.tenSanPham</li>
+                </ol>
+            </div>
+        </div>
+        <div class="product-content rowp">
+            <div class="product-content-left">
+                <div class="product-content-left-big-img zoom">
+                    <img class="" src="/Asset/images/@Model.hinhAnh" />
+                </div>
+                <div class="product-content-left-small-img zoom">
+                    <img class="" src="/Asset/images/@Model.hinhAnh" />
+                    <img class="" src="/Asset/images/@Model.hinh1" />
+                    <img class="" src="/Asset/images/@Model.hinh2" />
+                    <img class="" src="/Asset/images/@Model.hinh3" />
+                    <img class="" src="/Asset/images/@Model.hinh4" />
+                </div>
+            </div>
+            <div class="product-content-right">
+                <div class="product-content-right-product-name">
+                    <h2>@Model.tenSanPham</h2>
+                    <p>@Model.loaiSanPham.tenLoaiSP</p>
+                </div>
+                <div class="product-content-right-product-price">
+                    <p>Giá: @String.Format("{0:0,0}", @Model.gia) đ</p>
+                </div>
+                <div class="product-content-right-product-color">
+                    <p style="font-weight: bold">MÀU SẮC: </p>
+                </div>
+                <div class="product-content-right-product-color-img">
+                    <span class="product-color" style="background-color: #997b38"></span>
+                    <span class="product-color" style="background-color: #997b38"></span>
+                </div>
+                <div class="product-content-right-product-size">
+                    <p style="font-weight: bold">Size:  <span style="color: red">Vui lòng chọn size</span></p>
+
+                    <div class="size">
+                        <span>36</span>
+                        <span>37</span>
+                        <span>38</span>
+                        <span>39</span>
+                        <span>40</span>
+                        <span>41</span>
+                        <span>42</span>
+                        <span>43</span>
+                    </div>
+                </div>
+
+                <div class="product-content-right-product-button">
+                    @using (Html.BeginForm("ThemGioHang", "GioHang", new
+                    {
+
+                        @iMasp = Model.maSanPham,
+                        @strURL = Request.Url.ToString()
+                    }))
+                    {
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <input type="submit" value="THÊM VÀO GIỎ HÀNG" id="bgnGioHang" />
+                    }
+                </div>
+                <div class="product-content-right-product-icon">
+                    <div class="product-content-right-product-icon-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>Hotline</p>
+                    </div>
+                    <div class="product-content-right-product-icon-item">
+                        <i class="fa-regular fa-comments"></i>
+                        <p>Chat</p>
+                    </div>
+                    <div class="product-content-right-product-icon-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>Email</p>
+                    </div>
+                </div>
+                <div class="product-content-right-button">
+                    <div class="product-content-right-button-top">&#8744;</div>
+                    <div class="product-content-right-button-content-big">
+                        <div class="product-content-right-button-content-title rowp">
+                            <div class="product-content-right-button-content-title-item ttsp">
+                                <h6>THÔNG TIN SẢN PHẨM</h6>
+                            </div>
+                        </div>
+
+                        <div class="product-content-right-button-content-dt">
+                            @Model.chuThichSanPham
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+<!-- Product related -->
+
+<div class="container">
+    <div class="product-related-title">
+        <p>SẢN PHẨM LIÊN QUAN</p>
+    </div>
+    <section class="product-related">
+        @Html.Action("SanPhamLienQuan", "SanPhams")
+    </section>
+
+</div>
+
+
+<script>
+    // ----------------------------------------------------------------------------------------
+    const ttsp = document.querySelector('.ttsp');
+    const dt = document.querySelector('.dt');
+    const bh = document.querySelector('.bh');
+    if (ttsp) {
+        ttsp.addEventListener('click', function () {
+            document.querySelector(
+                '.product-content-right-button-content-ttsp'
+            ).style.display = 'block';
+            document.querySelector(
+                '.product-content-right-button-content-dt'
+            ).style.display = 'none';
+            document.querySelector(
+                '.product-content-right-button-content-bh'
+            ).style.display = 'none';
+        });
+    }
+    if (dt) {
+        dt.addEventListener('click', function () {
+            document.querySelector(
+                '.product-content-right-button-content-ttsp'
+            ).style.display = 'none';
+            document.querySelector(
+                '.product-content-right-button-content-dt'
+            ).style.display = 'block';
+            document.querySelector(
+                '.product-content-right-button-content-bh'
+            ).style.display = 'none';
+        });
+    }
+    if (bh) {
+        bh.addEventListener('click', function () {
+            document.querySelector(
+                '.product-content-right-button-content-ttsp'
+            ).style.display = 'none';
+            document.querySelector(
+                '.product-content-right-button-content-dt'
+            ).style.display = 'none';
+            document.querySelector(
+                '.product-content-right-button-content-bh'
+            ).style.display = 'block';
+        });
+    }
+
+
+    // ----------------------------------------------------------------------------------------
+    const bigImg = document.querySelector('.product-content-left-big-img img');
+    const samllImg = document.querySelectorAll(
+        '.product-content-left-small-img img'
+    );
+    samllImg.forEach(function (imgItem, X) {
+        imgItem.addEventListener('click', function () {
+            bigImg.src = imgItem.src;
+        });
+    });
+</script>

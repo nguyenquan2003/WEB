@@ -1,0 +1,79 @@
+﻿@model WEBGIAY.Models.sanPham
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center bg-warning m-2">Xoá vĩnh viễn sản phẩm</h2>
+
+
+<div class="container w-75">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Loại sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loaiSanPham.tenLoaiSP)
+        </dd>
+
+
+        <dt>
+            Tên sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tenSanPham)
+        </dd>
+
+        <dt>
+            Giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+
+        <dt>
+            Số lượng sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soLuongSanPham)
+        </dd>
+
+        <dt>
+            Ghi chú:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chuThichSanPham)
+        </dd>
+
+        <dt>
+            Ngày sản xuất:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaySanXuat)
+        </dd>
+
+        <dt>
+            Hình ảnh:
+        </dt>
+        <dd>
+            <img class="card-img w-50 mx-auto" src="~/Asset/images/@Model.hinhAnh" alt="Ảnh sản phẩm" />
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Xoá sản phẩm" class="btn btn-warning" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success btn-lg" })
+        </div>
+    }
+</div>

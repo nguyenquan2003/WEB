@@ -1,0 +1,182 @@
+﻿@model List<WEBGIAY.Models.sanPham>
+@*@using WEBGIAY.Models;*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+@{
+    int totalPages = ViewBag.TotalPages;
+    int currentPage = ViewBag.CurrentPage;
+}
+<style>
+
+    .col-lg-12 {
+        padding: 25px;
+        font-size: 20px;
+    }
+
+    .sx {
+        font-weight: bolder;
+        color: black;
+        font-size: 2rem;
+    }
+
+    .lua-chon {
+        height: 30px;
+    }
+
+    .lua-chon {
+        height: 30px;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .pagination li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagination a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+            margin: 0 2px;
+            font-size: 1.3rem;
+        }
+
+            .pagination a.active {
+                background-color: yellow;
+            }
+
+            .pagination a:hover {
+                background-color: red;
+            }
+</style>
+<div class="container-md">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 py-xxl-5 float-right">
+                <div class="nav flex-column">
+                    @Html.Action("BrandList", "LoaiSanPham")
+                </div>
+            </div>
+            <div class="col-sm">
+                <div>
+                    <img class="card-img m-2" src="~/Image/Image_CTSP/Desktop_Homepage_Banner.jpg" alt="Ảnh khuyến mãi" />
+                </div>
+                @using (Html.BeginForm("Index", "SanPhams", FormMethod.Get, new { @class = "row w-50 mx-auto" }))
+                {
+
+                    <div class="col-auto">
+                        <label class="card-text text-black" for="sortBy">Sắp xếp theo</label>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select" name="sortBy">
+                            <option value="Giá Bán tăng dần" @(ViewBag.SortBy == "Giá Bán tăng dần" ? "selected" : "")>
+                                Giá Bán tăng dần
+                            </option>
+                            <option value="Giá Bán giảm dần" @(ViewBag.OrderByDescending == "Giá Bán giảm dần" ? "selected" : "")>
+                                Giá Bán giảm dần
+                            </option>
+                            <option value="Tên Sản Phẩm tăng dần" @(ViewBag.SortBy == "Tên Sản Phẩm tăng dần" ? "selected" : "")>
+                                Tên sản phẩm tăng dần
+                            </option>
+                            <option value="Tên Sản Phẩm giảm dần" @(ViewBag.OrderByDescending == "Tên Sản Phẩm giảm dần" ? "selected" : "")>
+                                Tên sản phẩm giảm dần
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <input class="btn btn-warning" type="submit" value="SẮP XẾP" />
+                    </div>
+                }
+                <div class="container w-100">
+                    <div class="container py-2">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="card m-2" style="width: 15rem; padding-bottom: 15px;">
+                                    <div>
+                                        <a href="@Url.Action("ChiTiet",new {id=item.maSanPham})">
+                                            <img class="card-img-top" src="/Asset/images/@item.hinhAnh">
+                                        </a>
+                                    </div>
+
+                                    <div class="card-link text-center">
+                                        <h5 class="card-text">------------------------------------</h5>
+                                        <h5 class="card-title">
+                                            <a href="@Url.Action("ChiTiet",new {id=item.maSanPham})">@item.tenSanPham</a>
+                                        </h5>
+                                        <h5 class="card-title">
+                                            Loại sản phẩm : @(item.loaiSanPham?.tenLoaiSP ?? "N/A")
+
+                                        </h5>
+                                        <h5 class="card-text">
+                                            Giá Bán: <span style="color:red">@String.Format("{0:0,0}", @item.gia) đ</span>
+                                        </h5>
+
+                                        @using (Html.BeginForm("ThemGioHang", "GioHang", new
+                                        {
+                                            @iMasp = item.maSanPham,
+                                            @strURL
+                                       = Request.Url.ToString()
+                                        }))
+                                        {
+                                            <input class="btn btn-warning text-white" type="submit" value="MUA NGAY" id="bgnGioHang" />
+                                        }
+
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                        <table class="justify-content-between">
+                            @if (totalPages > 1)
+                            {
+                                <div class="pagination">
+                                    @if (currentPage > 1)
+                                    {
+                                        <a class="page-link"
+                                           href="@Url.Action("Index", new { page = currentPage - 1 })">Prev</a>
+                                    }
+
+                                    @for (int i = 1; i <= totalPages; i++)
+                                    {
+                                        if (i == currentPage)
+                                        {
+                                            <a class="page-link active"><span>@i</span></a>
+                                        }
+                                        else
+                                        {
+                                            <a class="page-link" href="@Url.Action("Index", new {page = i })">@i</a>
+                                        }
+                                    }
+
+                                    @if (currentPage < totalPages)
+                                    {
+                                        <a class="page-link"
+                                           href="@Url.Action("Index", new { page = currentPage + 1 })">Next</a>
+                                    }
+                                </div>
+                            }
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

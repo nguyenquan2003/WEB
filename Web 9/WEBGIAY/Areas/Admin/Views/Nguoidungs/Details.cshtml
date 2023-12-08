@@ -1,0 +1,61 @@
+﻿@model WEBGIAY.Models.nguoiDung
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Chi tiết người dùng</h2>
+
+<div class="container w-50">
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Tên người dùng:
+            </th>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.tenNguoiDung)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Email:
+            </th>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.eMail)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Mật khẩu:
+            </th>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.matKhau)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Điện thoại:
+            </th>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.dienThoai)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Địa chỉ:
+            </th>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.diaChi)
+            </td>
+        </tr>
+    </table>
+
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10 text-center">
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.maNguoiDung }, new { @class = "btn btn-warning" })
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WEBGIAY.Models.phanQuyen>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Quyền truy cập</h2>
+<hr />
+<div class="container w-75">
+    <p class="text-warning-emphasis fs-4">
+        Các quyền truy cập của hệ thống
+    </p>
+</div>
+<div class="container w-25">
+    <table class="table table-bordered border-dark">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Tên Quyền
+            </th>
+        </tr>
+
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdQuyen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tenQuyen)
+                </td>
+            </tr>
+         }
+
+        </table>
+</div>

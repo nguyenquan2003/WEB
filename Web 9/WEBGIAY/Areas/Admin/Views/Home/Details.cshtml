@@ -1,0 +1,71 @@
+﻿@model WEBGIAY.Models.sanPham
+
+@{ ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<div class="container">
+    <h2 class="text-center bg-success m-2 p-2">Thông tin chi tiết sản phẩm</h2>
+    <div class="card w-75 mx-auto">
+        <div class="card-body">
+            <h4 class="card-title">Sản phẩm</h4>
+            <hr />
+            <dl class="dl-horizontal">
+
+                <dt>
+                    Loại sản phẩm:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.loaiSanPham.tenLoaiSP)
+                </dd>
+
+                <dt>
+                    Tên sản phẩm:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tenSanPham)
+                </dd>
+
+                <dt>
+                    Ngày sản xuất:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ngaySanXuat)
+                </dd>
+
+                <dt>
+                    Số lượng sản phẩm:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.soLuongSanPham)
+                </dd>
+
+                <dt>
+                    Giá:
+                </dt>
+                <dd>
+                    @String.Format("{0:0,0}", @Model.gia)
+                </dd>
+
+                <dt>
+                    Ghi chú:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.chuThichSanPham)
+                </dd>
+
+                <dt>
+                    Hình ảnh:
+                </dt>
+                <dd>
+                    <img class="card-img w-50 mx-auto" src="~/Asset/images/@Model.hinhAnh" alt="Ảnh sản phẩm" />
+                </dd>
+            </dl>
+            <div class="text-center mt-3">
+                <button class="btn btn-warning">
+                    @Html.ActionLink("Sửa sản phẩm", "Edit", new { id = Model.maLoaiSP }, new { @style = "color:white;" })
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

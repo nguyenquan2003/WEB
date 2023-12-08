@@ -1,0 +1,26 @@
+﻿@model WEBGIAY.Models.loaiSanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="card-header text-xl-center justify-content-xl-center">Xóa loại sản phẩm</h2>
+
+<h3>Bạn có chắc chắn xóa loại sản phẩm này?</h3>
+<div>
+    <h4>Tên loại sản phẩm: @Html.DisplayFor(model => model.tenLoaiSP)</h4> 
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions">
+            <input type="submit" value="Xóa" class="btn btn-danger btn-lg" />
+
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success btn-lg" })
+
+        </div>
+    }
+</div>
