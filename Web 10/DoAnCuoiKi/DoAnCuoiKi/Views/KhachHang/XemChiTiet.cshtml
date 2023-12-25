@@ -1,0 +1,32 @@
+﻿@model DoAnCuoiKi.Models.SanPham
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/KhungTrangKhachHang.cshtml";
+}
+
+<fieldset>
+    <div class="row">
+        <div class="display-field">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <img class="img-fluid" style="width:350px" src="~/HinhAnh/@Model.AnhBia" />
+        </div>
+        <div class="col-7">
+            <br />
+            <h2>@Html.DisplayFor(model => model.TenSanPham)</h2>
+            <h3 style="color:red">Giá: @Html.DisplayFor(model => model.GiaBan)đ</h3>
+            <h4>Mô tả sản phẩm:</h4>
+            <h5>@Html.DisplayFor(model => model.MoTa)</h5>
+            <h6>Ngày sản xuất: @Html.DisplayFor(model => model.NgaySanXuat)</h6>
+            <h6>Số lượng tồn: @Html.DisplayFor(model => model.SoLuongTon)</h6><br />
+            <button type="button" class="btn btn-outline-warning" style="margin-left:30px"><a href="~/KhachHang/ThemGioHang/@Model.MaSanPham">Thêm vào giỏ hàng</a></button>
+            <button type="button" class="btn btn-outline-danger" style="margin-left:50px">Mua ngay</button>
+
+        </div>
+    </div>
+    <div class="row"></div>
+</fieldset>

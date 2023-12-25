@@ -1,0 +1,11 @@
+﻿@using DoAnCuoiKi.Models
+@model List<LoaiHang>
+
+@foreach (var item in Model)
+{
+    <ul class="nav ">
+        <li class="nav-item">
+            <a type="search" id="search" name="search" class="nav-link" href="~/KhachHang/Index2/?id=@item.MaLoai">@item.TenLoai</a>
+        </li>
+    </ul>
+}

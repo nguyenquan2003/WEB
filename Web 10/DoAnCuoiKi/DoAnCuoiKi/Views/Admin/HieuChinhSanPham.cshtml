@@ -1,0 +1,64 @@
+﻿@model DoAnCuoiKi.Models.SanPham
+
+@{
+    ViewBag.Title = "HieuChinhSanPham";
+    Layout = "~/Views/Shared/KhungTrangAdmin.cshtml";
+}
+
+<h2>HieuChinhSanPham</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SanPham</legend>
+
+        
+        <div class="editor-label">
+            <h5>Tên sản phẩm:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenSanPham)
+            @Html.ValidationMessageFor(model => model.TenSanPham)
+        </div>
+
+        <div class="editor-label">
+            <h5>Giá bán:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GiaBan)
+            @Html.ValidationMessageFor(model => model.GiaBan)
+        </div>
+
+        <div class="editor-label">
+            <h5>Mô tả:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MoTa)
+            @Html.ValidationMessageFor(model => model.MoTa)
+        </div>
+
+        <div class="editor-label">
+            <h5>Ngày sản xuất</h5>
+            <input type="date" name="Ngaycn" />
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.NgaySanXuat)
+        </div>
+        <div class="editor-label">
+            <h5>Số lượng tồn:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SoLuongTon)
+            @Html.ValidationMessageFor(model => model.SoLuongTon)
+        </div>
+        <p>
+            <input type="submit" value="Lưu" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

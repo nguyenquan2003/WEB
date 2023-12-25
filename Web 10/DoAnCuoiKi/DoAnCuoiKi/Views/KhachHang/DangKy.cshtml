@@ -1,0 +1,90 @@
+﻿@model DoAnCuoiKi.Models.KhachHang
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/KhungTrangKhachHang.cshtml";
+}
+
+<h2>Đăng ký tài khoản:</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="editor-label">
+            <h5>Nhập mã khách hàng</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaKhachHang)
+            @Html.ValidationMessageFor(model => model.MaKhachHang)
+        </div>
+        <div class="editor-label">
+            <h5>Nhập họ và tên:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HoTen)
+            @Html.ValidationMessageFor(model => model.HoTen)
+        </div>
+
+        <div class="editor-label">
+            <h5>Chọn ngày/tháng/năm sinh</h5>
+            <input type="date" name="Ngaycn" />
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.NgaySinh)
+        </div>
+
+        <div class="editor-label">
+            <h5>Giới tính:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GioiTinh)
+            @Html.ValidationMessageFor(model => model.GioiTinh)
+        </div>
+
+        <div class="editor-label">
+            <h5>Nhập số điện thoại:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DienThoai)
+            @Html.ValidationMessageFor(model => model.DienThoai)
+        </div>
+
+        <div class="editor-label">
+            <h5>Nhập tên tài khoản:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TaiKhoan)
+            @Html.ValidationMessageFor(model => model.TaiKhoan)
+        </div>
+
+        <div class="editor-label">
+            <h5>Nhập mật khẩu:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MatKhau)
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+
+        <div class="editor-label">
+            <h5>Nhập Email:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            <h5>Nhập địa chỉ:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiaChi)
+            @Html.ValidationMessageFor(model => model.DiaChi)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}

@@ -1,0 +1,30 @@
+﻿@model DoAnCuoiKi.Models.LoaiHang
+
+@{
+    ViewBag.Title = "ThemLoaiHang";
+    Layout = "~/Views/Shared/KhungTrangAdmin.cshtml";
+}
+
+<h2>Thêm loại hàng:</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <h4>Mã loại:</h4>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaLoai)
+            @Html.ValidationMessageFor(model => model.MaLoai)
+        </div>
+        <h4>Tên loại:</h4>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenLoai)
+            @Html.ValidationMessageFor(model => model.TenLoai)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Thêm" />
+        </p>
+    </fieldset>
+}

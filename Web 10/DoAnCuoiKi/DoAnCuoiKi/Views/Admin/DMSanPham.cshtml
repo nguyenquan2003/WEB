@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DoAnCuoiKi.Models.SanPham>
+
+@{
+    ViewBag.Title = "DMSanPham";
+    Layout = "~/Views/Shared/KhungTrangAdmin.cshtml";
+}
+
+<h2>Danh sách sản phẩm</h2>
+<button type="button" class="btn btn-outline-warning" style="margin-left:0px;width:auto"><a href="/Admin/ThemSanPham">Thêm sản phẩm</a></button>
+<table class="table">
+    <tr>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Giá bán
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Ngày sản xuất
+        </th>
+        <th>
+            Ảnh
+        </th>
+        <th>
+            Số lượng tồn
+        </th>
+        <th>
+            NSX
+        </th>
+        <th>
+            Mã loại
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p style="width:130px">@Html.DisplayFor(modelItem => item.TenSanPham)</p>
+        </td>
+        <td>
+            <p style="color:red">@Html.DisplayFor(modelItem => item.GiaBan) VNĐ</p>
+        </td>
+        <td>
+            <p style="width:300px">@Html.DisplayFor(modelItem => item.MoTa)</p>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySanXuat)
+        </td>
+        <td>
+            <img src="/HinhAnh/@item.AnhBia" class="card-img-top" style="width:100px" alt="...">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "HieuChinhSanPham", new { id = item.MaSanPham }, new { @class = "btn btn-success" }) <p><br /></p>
+            @Html.ActionLink("Xóa", "XoaSanPham", new { id = item.MaSanPham }, new { @class = "btn btn-success" })
+        </td>
+    </tr>
+}
+
+</table>

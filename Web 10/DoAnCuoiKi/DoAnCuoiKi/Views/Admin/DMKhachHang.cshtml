@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DoAnCuoiKi.Models.KhachHang>
+
+@{
+    ViewBag.Title = "DMKhachHang";
+    Layout = "~/Views/Shared/KhungTrangAdmin.cshtml";
+}
+
+<h2>Danh sách khách hàng</h2>
+<table class="table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Giới tính
+        </th>
+        <th>
+            Sđt
+        </th>
+        <th>
+            Tài khoản
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+   <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        
+    </tr>
+}
+
+</table>

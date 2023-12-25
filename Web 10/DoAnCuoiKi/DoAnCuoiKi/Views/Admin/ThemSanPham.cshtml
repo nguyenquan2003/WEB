@@ -1,0 +1,92 @@
+﻿@model DoAnCuoiKi.Models.SanPham
+
+@{
+    ViewBag.Title = "ThemSanPham";
+    Layout = "~/Views/Shared/KhungTrangAdmin.cshtml";
+}
+@using (Html.BeginForm("ThemSanPham", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <h2>Thêm sản phẩm:</h2>
+        <div class="editor-label">
+            <h5>Mã sản phẩm:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaSanPham)
+            @Html.ValidationMessageFor(model => model.MaSanPham)
+        </div>
+        <div class="editor-label">
+            <h5>Tên sản phẩm:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenSanPham)
+            @Html.ValidationMessageFor(model => model.TenSanPham)
+        </div>
+        <div class="editor-label">
+            <h5>Giá bán:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GiaBan)
+            @Html.ValidationMessageFor(model => model.GiaBan)
+        </div>
+        <div class="editor-label">
+            <h5>Mô tả:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MoTa)
+            @Html.ValidationMessageFor(model => model.MoTa)
+        </div>
+        <div class="editor-label">
+            <h5>Ngày sản xuất:</h5><br />
+            <input type="date" name="Ngaycn" />
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.NgaySanXuat)
+        </div>
+        <div class="editor-label">
+            <h5>Thêm ảnh bìa:</h5>
+            <div>
+                <input type="file" name="fileupload" />
+                @*thông báo chung*@
+                @ViewBag.thongbao
+            </div>
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.AnhBia)
+        </div>
+        <div class="editor-label">
+            <h5>Số lượng tồn:</h5>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SoLuongTon)
+            @Html.ValidationMessageFor(model => model.SoLuongTon)
+        </div>
+        <div class="editor-label">
+            <h5>Mã nhà sản xuất:</h5>
+            <div>
+                @Html.DropDownList("MaNSX")
+            </div>
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.MaNSX)*@
+            @Html.ValidationMessageFor(model => model.MaNSX)
+        </div>
+
+        <div class="editor-label">
+            <h5>Mã loại:</h5>
+            <div>
+                @Html.DropDownList("MaLoai")
+            </div>
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.MaLoai)*@
+            @Html.ValidationMessageFor(model => model.MaLoai)
+        </div>
+        <p><br />
+            <input type="submit" value="THÊM" />
+        </p>
+    </fieldset>
+}

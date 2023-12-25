@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+@using DoAnCuoiKi.Models
+
+<body>
+    <div class="container-fluid">
+        <div class="row" style="background-color:darkred">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <img src="/HinhAnh/logo.jpg" style="width:100px" />
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <form class="d-flex" action="/KhachHang/Index">
+                                <label for="search" class="mx-2 my-1"></label>
+                                <input style="width:330px" type="search" class="form-control" id="search" name="search" value="@ViewBag.Search" placeholder="Bạn đang tìm gì.." />
+                                <button style="margin-left:5px;" type="submit" class="btn">🔎 </button>
+                            </form>
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a style="color:white" class="nav-link active" href="#">Trang chủ</a>
+                                </li>
+                                @if (Session["user"] == null)
+                                {
+                                    <li class="nav-item">
+                                        <a style="color:white" class="nav-link" href="/KhachHang/DangNhap">Đăng nhập</a>
+                                    </li>
+                                }
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color:white" href="/KhachHang/XemGioHang">Giỏ hàng(5)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color:white" href="/Admin/DangNhap">Admin</a>
+                                </li>
+                            </ul>
+                        </div>
+                        @if (Session["user"] != null)
+                        {
+                            KhachHang kh = Session["user"] as KhachHang;
+                            <div class="row">
+                                <div class="col-12 text-right">
+                                    <p class="text-light font-weight-bold">Xin chào @kh.HoTen</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </nav>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            @Html.Action("DMLoaiHang", "KhachHang")
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8"> @RenderBody()</div>
+            <div class="col-2">
+            </div>
+        </div>
+        <div class="row" style="background-color:darkred;height:100px"></div>
+    </div>
+</body>
+</html>

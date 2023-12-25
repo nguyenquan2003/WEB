@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/KhungTrangKhachHang.cshtml";
+}
+@using DoAnCuoiKi.Models
+@model List<SanPham>
+<div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-3" style="height:360px;text-align:center;">
+                <img src="/HinhAnh/@item.AnhBia" class="card-img-top" alt="...">
+                <div style="height:40px"><h6><a href="/KhachHang/XemChiTiet/@item.MaSanPham">@item.TenSanPham</a></h6></div>
+                <h5 style="color:red">@item.GiaBan đ</h5>
+                <button type="button" class="btn btn-outline-warning" style="margin-left:0px;width:auto"><a href="/KhachHang/ThemGioHang/@item.MaSanPham">Thêm vào giỏ hàng</a></button>
+
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DoAnCuoiKi.Models.GioHang>
+
+@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Shared/KhungTrangKhachHang.cshtml";
+}
+@if (Model != null) { 
+<table class="table">
+    <tr>
+        <th></th>
+        <th></th>
+        <th>
+            <h5>Đơn giá</h5>
+        </th>
+        <th>
+            <h5>Số lượng</h5>
+        </th>
+        <th>
+            <h5>Thành tiền</h5>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="width:100px"><img src="/HinhAnh/@item.hinh" class="card-img-top" alt="..."></td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tensanpham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaban)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slmua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thanhtien)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "XoaGioHang", new { id = @item.masanpham })
+        </td>
+    </tr>
+}
+    <tr>
+        <td>Tổng</td>
+        <td></td>
+        <td></td>
+        <td>@ViewBag.amount</td>
+        <td>@ViewBag.sum</td>
+        <td></td>
+    </tr>
+</table>
+}
+else{
+    <h3 style="color:red">Không có sản phẩm trong giỏ !</h3>
+    <a style="color:red" class="nav-link" href="/KhachHang/Index">(Quay lại mua sắm)</a>
+    @ViewBag.tbgio
+}
