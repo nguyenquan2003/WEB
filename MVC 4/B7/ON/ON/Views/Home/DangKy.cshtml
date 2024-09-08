@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Share/khungtrangchinh.cshtml";
+}
+
+<h2>DangKy</h2>
+<form method="post" action="/Home/Insert_KhachHang">
+    <div class="form-group">
+        <label> Mã Khách Hàng </label>
+        <input class="form-control" name="MaKhachHang" type="text" />
+    </div>
+    <div class="form-group">
+        <label> Tên Khách Hàng </label>
+        <input class="form-control" name="TenKhachHang" type="text" />
+    </div>
+    <div class="form-group">
+        <label> Số Điện Thoại </label>
+        <input class="form-control" name="SoDienThoai" type="text" />
+    </div>
+    <div class="form-group">
+        <label> Mật Khẩu</label>
+        <input class="form-control" name="MatKhau" type="text" />
+    </div>
+    <input type="submit" value="them moi" />
+</form>

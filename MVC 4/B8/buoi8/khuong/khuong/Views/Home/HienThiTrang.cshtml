@@ -1,0 +1,36 @@
+﻿@model IEnumerable<khuong.Models.tbl_Deparment>
+
+@{
+    ViewBag.Title = "HienThiTrang";
+    Layout = "~/Views/Shared/KhungTrang.cshtml";
+}
+
+<h2>HienThiTrang</h2>
+
+<p>
+    @Html.ActionLink("Them phong ban", "ThemPhongBan")
+</p>
+<table class="table">
+    <tr>
+        <th>Ma Phong</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.DeptId</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Sua", "HieuChinh","Home", new { id=item.DeptId}, new {@class = "btn btn-success"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.DeptId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DeptId},new {@class = "btn btn-success"} })
+        </td>
+    </tr>
+}
+
+</table>

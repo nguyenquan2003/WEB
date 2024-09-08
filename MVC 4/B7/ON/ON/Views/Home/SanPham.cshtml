@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Share/khungtrangchinh.cshtml";
+}
+@using ON.Models
+@model List<SanPham>
+
+<h2>SanPham</h2>
+@foreach (SanPham item in Model)
+{
+    <div class="card" style="width: 18rem;float:left;margin:auto">
+    <img src="/Hinh/meo.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p>@item.TenSP</p>
+        <p>@item.Gia</p>
+        <p><a href="/Home/ChiTiet" class="card-link">Chi Tiết</a></p>
+    </div>
+</div>
+}
+
+
+@*<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Tên Sản Phẩm</th>
+            <th>Giá</th>
+            <th>Chi Tiết</th>
+        </tr>
+    </thead>
+    @foreach(SanPham item in Model)
+    {
+        <tr>
+            <th>@item.TenSP</th>
+            <th>@item.Gia</th>
+            <th><a href="#" class="card-link">Chi Tiết</a></th>
+        </tr>
+    }
+</table>*@
+
+@*<div class="container-fluid">
+    
+    <div class="card" style="width: 18rem;">
+@foreach (SanPham item in Model)
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Thông tin : @item.TenSP</li>
+        </ul>
+        <img src="/Hinh/meo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            
+        </div>
+@foreach (SanPham item in Model)
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Giá : @item.Gia</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Chi Tiết</a>
+        </div>
+    </div>
+</div>*@
+<script src="~/bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="~/bootstrap/js/bootstrap.min.js"></script>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "KhachHang";
+    Layout = "~/Views/Share/khungtrangchinh.cshtml";
+}
+@using ON.Models
+@model List<KhachHang>
+
+<h2>SanPham</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã Khách Hàng</th>
+            <th>Tên Khách Hàng</th>
+            <th>Số Điện Thoại</th>
+            <th>Mật Khẩu</th>
+        </tr>
+    </thead>
+    @foreach (KhachHang item in Model)
+    {
+        <tr>
+            <th>@item.MaKhachHang</th>
+            <th>@item.TenKhachHang</th>
+            <th>@item.SoDienThoai</th>
+            <th>@item.MatKhau</th>
+        </tr>
+    }
+</table>
+

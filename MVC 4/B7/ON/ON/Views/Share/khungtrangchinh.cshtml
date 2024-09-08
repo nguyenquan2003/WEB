@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div>
+            <nav class="nav">
+                <a class="nav-link active" aria-current="page" href="/Home/Index">Home</a>
+                <a class="nav-link" href="/Home/SanPham">Thông tin</a>
+                <a class="nav-link" href="/Home/KhachHang">Khách Hàng</a>
+                <a class="nav-link" href="#">Liên hệ</a>
+            </nav>
+        </div>
+        <div>
+            <nav class="nav">
+                <a class="nav-link" href="/Home/DangKy">Đăng ký</a>
+                <a class="nav-link" href="/Home/DangNhap">Đăng nhập</a>
+            </nav>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+    
+</body>
+</html>

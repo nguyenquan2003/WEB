@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Khuong_buoi8.Models.Sach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/KhungTrangChinh.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN SÁCH</h2>
+
+<p>
+    @Html.ActionLink("Thêm Quyển Sách Mới", "ThemSachMoi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Sách
+        </th>
+        <th>
+            Giá Bán
+        </th>
+        <th>
+            Mô Tả
+        </th>
+        <th>
+            Ngày Cập Nhật
+        </th>
+        <th>
+            Ảnh Bìa
+        </th>
+        <th>
+            Số Lượng Tồn
+        </th>
+        <th>
+            Mã Chủ Đề
+        </th>
+        <th>
+            Mã NXB
+        </th>
+        <th>
+            Mới
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td>
+            <img src="/Hinh/@item.AnhBia" style="width:70px"/>
+
+           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaChuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNXB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Moi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaSach }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaSach }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaSach })
+        </td>
+    </tr>
+}
+
+</table>

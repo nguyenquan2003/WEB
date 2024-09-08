@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index4";
+}
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+@using DuongVanKhuong_buoi3.Models;
+@model NhanVien
+<h2>Index4</h2>
+<table class="table">
+    <tr>
+        <td colspan="2" class="bg-primary">THONG TIN NHAN VIEN</td>
+    </tr>
+    <tr>
+        <td>
+            Ma Nhan Vien:
+        </td>
+        <td>@Model.MaNV</td>
+    </tr>
+    <tr>
+        <td>
+            Ten Nhan Vien:
+        </td>
+        <td>@Model.TenNV</td>
+    </tr>
+    <tr>
+        <td>
+            Gioi Tinh:
+        </td>
+        <td>@Model.GT</td>
+    </tr>
+    <tr>
+        <td>
+            Hinh Anh:
+        </td>
+        <td>
+            <img src="@Model.Hinh"></td>
+    </tr>
+</table>

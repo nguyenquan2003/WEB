@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "NhanSu";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@using TranVanTinh_Buoi4.Models;
+@model List<Employee>
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<h2>NhanSu</h2>
+@Html.ActionLink("Phong Ban","PhongBan","Home")
+@Html.ActionLink("Them moi thanh vien","Form", "Home");
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>Deptld</th>
+        </tr>
+    </thead>
+    @foreach(Employee item in Model)
+    {
+        <tr>
+            <th>@item.ID</th>
+            <th>@item.Name</th>
+            <th>@item.Gender</th>
+            <th>@item.City</th>
+            <th>@item.Deptld</th>
+        </tr>
+    }
+</table>

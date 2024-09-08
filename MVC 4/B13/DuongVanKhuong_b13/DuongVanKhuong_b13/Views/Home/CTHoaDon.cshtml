@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DuongVanKhuong_b13.Models.tbl_ChiTiet>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CTHoaDon</title>
+</head>
+<body>
+    <table class="table-active">
+        <tr>
+            <th> Mã sách</th>
+            <th>Tên sách</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+        </tr>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MaSP)</td>
+            <td>@Html.DisplayFor(modelItem => item.tbl_SanPham.TenSP)
+            <td>@Html.DisplayFor(modelItem => item.SoLuong)
+            <td>@Html.DisplayFor(modelItem => item.tbl_SanPham.DonGia)</td>
+        </tr>
+    }
+    </table>
+</body>
+</html>

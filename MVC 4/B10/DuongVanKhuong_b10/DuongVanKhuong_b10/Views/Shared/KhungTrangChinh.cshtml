@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <nav class="nav">
+                    <img style="height:50px;width:330px ;" src="~/HinhAnhSP/asp.net-mvc.jpg" />
+                </nav>
+            </div>
+            <div class="col-4">
+                <ul class="nav justify">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đăng ký</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        <ul>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                     </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                @Html.Action("DMChuDe", "KhachHang")
+                @Html.Action("NhaXuatBan", "KhachHang")
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    <img style="width:100%;height:250px" src="~/HinhAnhSP/asp.net-mvc.jpg" />
+                </div>
+                <div class="row">
+                    @Html.Action("DSSach", "KhachHang")
+                </div>
+                
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>

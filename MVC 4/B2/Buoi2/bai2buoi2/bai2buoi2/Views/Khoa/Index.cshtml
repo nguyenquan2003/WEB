@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/khungchinh.cshtml";
+}
+@using bai2buoi2.Models;
+@Model Khoa
+<h2>Index</h2>
+<div class="container-fluid">
+    <p>Thong tin khoa:</p><br />
+    <p>Ten Khoa: @Model.TenKhoa</p><br />
+    <p>Nam thanh lap: @Model.NamThanhLap</p><br />
+    <p>Slogen: @Model.Mess</p><br />
+</div>
+
+
+
+<script src="~/bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="~/bootstrap/js/bootstrap.min.js"></script>

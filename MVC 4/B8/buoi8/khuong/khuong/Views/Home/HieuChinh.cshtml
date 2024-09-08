@@ -1,0 +1,35 @@
+﻿@model khuong.Models.tbl_Deparment
+
+@{
+    ViewBag.Title = "HieuChinh";
+    Layout = "~/Views/Shared/KhungTrang.cshtml";
+}
+
+<h2>HieuChinh</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbl_Deparment</legend>
+
+        @Html.HiddenFor(model => model.DeptId)
+
+        <div class="editor-label">
+            Ten Phong Ban
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "HienThiTrang")
+</div>

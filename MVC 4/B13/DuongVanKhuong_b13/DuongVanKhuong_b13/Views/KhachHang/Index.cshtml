@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DuongVanKhuong_b13.Models.tbl_SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/KhungKhachHang.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Hình
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Số lượng tồn
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhAnh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        
+    </tr>
+}
+
+</table>

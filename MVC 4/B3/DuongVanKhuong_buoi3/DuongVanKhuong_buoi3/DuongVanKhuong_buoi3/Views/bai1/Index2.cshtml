@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+<body>
+    <div>
+        @{
+            if (ViewBag.TraiCay != null)
+            {
+                foreach (var item in ViewBag.TraiCay)
+                {
+                    @item<br />
+                }
+            }
+        }
+    </div>
+</body>

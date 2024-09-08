@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/KhungTrangChinh.cshtml";
+}
+@using DuongVanKhuong_B12.Models
+@model List<tbl_SanPham>
+<div class="container">
+    <div class="row">
+        <h2>Danh sách sản phẩm</h2>
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-3" style="height:400px;text-align:center">
+                <img src="/Hinh/@item.HinhAnh" class="card-img-top" alt="...">
+                <a href="/Home/XemChiTiet/@item.MaSanPham"><p>@item.TenSP</p></a>
+                <p>@item.DonGia VNĐ</p>
+                <button type="button" class="btn btn-danger"><a href="/Home/ThemGioHang/@item.MaSanPham">Chọn mua</a></button>   
+            </div>
+        }
+    </div>
+</div>

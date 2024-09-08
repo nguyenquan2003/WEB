@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@using DuongVanKhuong_B6.Models
+
+<h2>TrangChu</h2>
+@if(Session["KhachHang"] != null)
+{
+    KhachHang a = Session["KhachHang"] as KhachHang;
+    <p>xin chao! @a.TenKhachHang</p>
+}else
+{
+    <div>dang nhap khong thanh cong</div>
+}
+

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/KhungKhachHang.cshtml";
+}
+<div>
+    <form method="post" action="/KhachHang/DangNhap">
+        <div>
+            <label>Tài khoản</label>
+            <input type="text" name="TenKH" />
+        </div>
+        <div>
+            <label>Mật khẩu</label>
+            <input type="text" name="MatKhau" />
+        </div>
+        <input type="submit" value="Đăng nhập" />
+    </form>
+</div>

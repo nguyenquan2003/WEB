@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Form</h2>
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post" action="/Home/Insert_Employee">
+    <div class="form-group">
+        <label> Name </label>
+        <input class="form-control" name="Name" type="text" />
+    </div>
+    <div class="form-group">
+        <label> Gender </label>
+        <input class="form-control" name="Gender" type="text" />
+    </div>
+    <div class="form-group">
+        <label> City </label>
+        <input class="form-control" name="City" type="text" />
+    </div>
+    <div class="form-group">
+        <label> Deptld</label>
+        <input class="form-control" name="Deptld" type="text" />
+    </div>
+    <input type="submit" value="them moi" />
+</form>

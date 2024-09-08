@@ -1,0 +1,17 @@
+﻿@using DuongVanKhuong_b10.Models
+@model List<Sach>
+<div class="container">
+    <div class="row">
+        <h2>LIST BOOK</h2>
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+           <div class="col-3" style="height:400px;text-align:center">
+               <img  src="/HinhAnhSP/@item.AnhBia" class="card-img-top" alt="...">
+               <p>Tiêu đề: @item.TenSach</p>
+               @Html.ActionLink("Xem chi tiết", "XemChiTiet","KhachHang")
+           </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Share/khungtrangchinh.cshtml";
+}
+
+@using ON.Models
+<h2>TrangChu</h2>
+@if (Session["KhachHang"] != null)
+{
+    KhachHang a = Session["KhachHang"] as KhachHang;
+    <p>xin chao! @a.TenKhachHang</p>
+}
+else
+{
+    <p>Vui lòng đăng ký</p>
+    <a class="nav-link" href="/Home/DangKy">Đăng ký</a>
+}
+
+
+
+<script src="~/bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="~/bootstrap/js/bootstrap.min.js"></script>

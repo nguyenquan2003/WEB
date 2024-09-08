@@ -1,0 +1,79 @@
+﻿@model DuongVanKhuong_b10.Models.Sach
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/KhungTrangChinh.cshtml";
+}
+
+<h2>XemChiTiet</h2>
+
+<fieldset>
+    <legend>Sach</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenSach)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenSach)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GiaBan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GiaBan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MoTa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MoTa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayCapNhat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayCapNhat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AnhBia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AnhBia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoLuongTon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLuongTon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaChuDe)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaChuDe)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaNXB)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaNXB)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Moi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Moi)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MaSach }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

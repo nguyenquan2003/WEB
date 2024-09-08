@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DuongVanKhuong_b13.Models.tbl_HoaDon>
+
+@{
+    ViewBag.Title = "HoaDon";
+    Layout = "~/Views/Shared/KhungTrangChinh.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Ngày đặt hàng</p>
+        </th>
+        <th>
+            <p>Thông tin khách hàng</p>
+        </th>
+        <th>
+            <p>Ngày hẹn giao</p>
+        </th>
+        <th>
+            <p>Mã hóa đơn</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayThanhToan)
+        </th>
+        <th>Tình trạng</th>
+        <th>Duyệt giao hàng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayHoaDon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKH)<br />
+            @Html.DisplayFor(modelItem => item.tbl_KhachHang.TenKH)<br/>
+            @Html.DisplayFor(modelItem => item.tbl_KhachHang.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayGiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHoaDon)
+            @Html.Action("CTHoaDon", "Home", new { id = item.MaHoaDon})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayThanhToan)
+        </td>
+       <td>
+           @if(item.NgayThanhToan == null)
+           {
+               <P>Chưa giao</P>
+           }
+           else
+           {
+               <p>Đã giao</p>
+           }
+       </td>
+        <td>
+            @if(item.NgayThanhToan == null)
+            {
+                <a href="/Home/XacNhanDon/@item.MaHoaDon" class="btn btn-primary">Xác nhận</a> 
+            }
+        </td>
+    </tr>
+}
+
+</table>

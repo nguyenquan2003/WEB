@@ -1,0 +1,72 @@
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.dll.config
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.pdb
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Microsoft.Web.Infrastructure.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Newtonsoft.Json.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Helpers.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Mvc.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Razor.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Deployment.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Razor.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Newtonsoft.Json.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Helpers.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Mvc.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Razor.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Deployment.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Razor.xml
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.csprojResolveAssemblyReference.cache
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.dll
+E:\LuuDuLieuSinhVien\Duong Van Khuong\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.pdb
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.dll.config
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.pdb
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Net.Http.Formatting.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Helpers.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Http.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Http.WebHost.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Mvc.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Razor.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Newtonsoft.Json.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Net.Http.Formatting.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Helpers.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Http.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Http.WebHost.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Mvc.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Razor.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.dll
+C:\Users\PC\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.pdb
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.dll.config
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\DuongVanKhuong_b10.pdb
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.dll
+C:\Users\Administrator\Desktop\DuongVanKhuong_b10\DuongVanKhuong_b10\obj\Debug\DuongVanKhuong_b10.pdb
