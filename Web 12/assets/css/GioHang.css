@@ -1,0 +1,98 @@
+html{
+    height: 100vh;
+    position: relative;
+}
+.body-giohang{
+    /* height: 500px; */
+    margin: 50px auto;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.5rem;
+
+}
+
+.body-giohang tr th{
+    text-align: center;
+}
+.body-giohang th{
+    border: 1px solid #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3a9ad9;
+    color: white;
+}
+.body-giohang td{
+    border: 1px solid #ddd;
+    /* padding: 12px 0; */
+    background: #ccc;
+    
+}
+.body-giohang td:first-child{
+    text-align: center;
+}
+
+.row-height{
+    width: 500px;
+
+}
+
+.alignCenter{
+    text-align: center;
+}
+.row-sp td{
+    padding: 0;
+    line-height: 30px;
+    background: #fff;
+}
+.row-sp td img{
+    width: 80px;
+}
+
+.fa-trash{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    
+    color: #999;
+    cursor: pointer;
+    transition-duration: .2s;
+}
+
+.soluong{
+    text-align: center;
+}
+.soluong button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.soluong input{
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    width: 5em;
+    height: 2em;
+}
+.thanhtoan{
+    background-color: #6ab5e7 ;
+
+}
+.thanhtoan a{
+    line-height: 4rem;
+}
+.thanhtoan,
+.xoaHet{
+    cursor: pointer;
+}
+.thanhtoan:hover,
+.xoaHet:hover{
+    background-color: #3a9ad9;
+    color: #fff;
+}

@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript">
+	</script>
+		
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/chitietsp.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="./assets/js/base.js"></script>
+        <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.4.0-web/css/all.min.css">
+        <link rel="stylesheet" href="./assets/css/base.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
+
+    <title>Chi tiết sản phẩm - PC store</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <script> addTopNav();</script>
+    <section>
+        <script> addHeader(); </script>
+        <!-- Thông tin từng sản phẩm -->
+        <div class="small-container single-product">
+            <div class="row">
+                <div class="col-2">
+                    <img src="./assets/img/imgs_chitietsp/Camera.png" width="100%" id="productImg">
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img src="./assets/img/imgs_chitietsp/Camera1.png"width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="./assets/img/imgs_chitietsp/Camera.png"width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="./assets/img/imgs_chitietsp/Camera2.jpg" width="100%" class="small-img">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-2">
+                    <p>Trang chủ / CAMERA </p>
+                  <h1 style="font-size: 30px">Camera Raspberry V2.1 8Mp IMX219 RS UK 1080P Chính Hãng</h1>
+                  <h4><span>Giá:</span> <span>469000</span> <span>đ</span> </h4> 
+                  <p style="font-size: 20px;">Số lượng:  <input type="number" value="" max="10"></p>
+                   
+                    <a href="" class="button" onclick="addToCart(this);">Thêm vào giỏ hàng</a>
+                    <h3>Thông tin sản phẩm</h3>
+                    <br>    
+                    <p>  - Khả năng chụp ảnh camera Raspberry: 3280x2464 pixel<br>
+                        - Quay video ở độ phân giải 1080p30, 720p60 và 640x480p90<br>
+                        - Chiều dài FFCcable: 15cm
+                    </p>
+                
+    
+                </div>
+        </div>
+        <!-- title -->
+        <div class="small-container">
+            <div class="row row-2">
+                <h2 style="color: red">Sản phẩm liên quan</h2>
+            </div>
+        </div>
+        <!-- Sản phẩm khác -->
+        <div  class="small-container">
+            <div class="row">
+                   <div class="col-4">
+                    <img src="./assets/img/imgs_chitietsp/Loa.png" />
+                    <h4>Phân Tần Loa <br>3 Kênh 150W Âm Trầm</h4>
+                    <div class="rating">
+                      <div class="text" onClick="location.href='SP3.html'">
+                      <button class="fa">Xem ngay</button>
+                            </div>
+                    </div>
+                </div>
+                
+             
+                <div class="col-4">
+                    <br>
+                    <img src="./assets/img/imgs_chitietsp/vonhom.png" />
+                    <h4 style="display: -webkit-box; -webkit-box-orient: vertical;-webkit-line-clamp: 2;text-overflow: ellipsis;overflow: hidden;">Vỏ Nhôm Tản Nhiệt Raspberry Pi 4 Model B</h4>
+                    <div class="rating">
+                    <div class="text" onClick="location.href='SP3.html'">
+                      <button class="fa">Xem ngay</button>
+                            </div>
+                    </div>
+                </div>
+                 <div class="col-4">
+                    <br>
+                    <img src="./assets/img/imgs_chitietsp/machnap.png" />
+                    <h4>Mạch Nạp<br> Pickit 3 Full</h4>
+                    <div class="rating">
+                    <div class="text" onClick="location.href='SP1.html'">
+                      <button class="fa">Xem ngay</button>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    
+                        <img src="./assets/img/imgs_chitietsp/LinhkienPi.png"/>
+                    
+                     
+                    
+                    <h4> [HH] Raspberry Pi 4 Model B 2019 Bản 4G</h4>
+                    <div class="rating">
+                        <div class="text" onClick="location.href='SP1.html'">
+                      <button class="fa">Xem ngay</button>
+                            </div>
+                    </div>
+                   
+                </div>
+            
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <script>addFooter_mini();</script>
+
+    <!-- Js for toggle menu -->
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle(){
+            if( menuItems.style.maxHeight == "0px"){
+                menuItems.style.maxHeight = "200px";
+            }
+            else{
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+		
+    </script>
+
+    <!-- Js for pruduct gallary -->
+    <script>
+        var productImg = document.getElementById("productImg");
+        var smallImg = document.getElementsByClassName("small-img");
+        smallImg[0].onclick = function(){
+            productImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function(){
+            productImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function(){
+            productImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function(){
+            productImg.src = smallImg[3].src;
+        }
+    </script>
+        <script src="./assets/js/trangchu.js"></script>
+        <script src="./assets/js/giohang.js"></script>
+
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="ScrollTop()"></i>
+
+</body>
+</html>
+

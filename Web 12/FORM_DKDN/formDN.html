@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_Dang Nhap</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="Valid_DN.js"></script>
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+        <div class="login-form">
+            <h2 >ĐĂNG NHẬP TÀI KHOẢN</h2>
+            <form action="#" method="GET" name="login">
+                <label for="emailPhone"><b>Email/Số Điện Thoại Đăng Nhập</b></label><br> 
+                <input name="emailPhone" id="emailPhone" type="text" placeholder="Nhập Email/Số Điện Thoại" required>
+                <span class="errorEmailPhone"></span><br>
+                <label for="passwd"><b>Password Tài Khoản</b></label><br>
+                <input name="passwd" id="passwd" type="password" placeholder="Nhập Password" required><br>
+                <span class="errorpass"></span><br>
+            </form>
+            <button onclick="KiemTra()" type="submit" class="button">ĐĂNG NHẬP</button>
+            <br>
+                <p style="margin-left: 160px; color: #dacfcf;">HOẶC</p>
+        </div>
+        <div>
+            <button class="app">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png" class="gg">
+                <span class="gg-text"><a href="https://accounts.google.com/v3/signin/identifier?dsh=S1292638655%3A1684660709857226&hl=vi&ifkv=Af_xneHPO6kY6iHJaMFun0jko9PVBp-oazbLhOUvc1uWmhbA1AI4og0BMCkrtEv94jx9YCAGPvLqtA&flowName=GlifWebSignIn&flowEntry=ServiceLogin" style="color: white; text-decoration: none;" target="_blank">Tiếp tục với Google</a></span>
+            </button>
+        </div>
+        <div>
+            <button class="app-fb">
+                <img src="https://1.bp.blogspot.com/-xKSHIGIWVWw/X8nZ7UZCHYI/AAAAAAAALBs/aih3kRhHrnsR_-GLju2gP2PK_faM_nNsACPcBGAYYCw/s600/Beautiful-design-Facebook-logo-social-media-png.png" class="fb">
+                <span class="fb-text"><a href="https://www.facebook.com/" style="color: white; text-decoration: none;" target="_blank">Tiếp tục với Facebook</a></span>
+            </button>
+        </div>
+         <div class="signin">
+            Bạn chưa có tài khoản <a href="formDk.html" target="_blank" style="color: aquamarine;">Đăng Ký</a>
+        </div>
+
+        <a class="esc" href="../TrangChu.html">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+</div> 
+    <div id="announce">
+        <div class="a-right">
+            <p><b style="color: red; margin-left: 180px;">Bạn đã đăng nhập thành công 
+                 <span class="account"></span>
+                </b>
+            </p>
+
+            <a style="top: 10px; right: 50px;" class="esc" href="../TrangChu.html">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* CSS Document */
+/* body {
+  font-family: "Helvetica Neue", sans-serif;
+	padding: 2vh;
+} */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  position: relative;
+  display: grid;
+  grid-gap: 1vh;
+  padding: 3vh;
+  background-color:#181a1b;
+  box-shadow: 0 0.2vh 0.8vh rgba(0, 0, 0, 0.05), 0 1vh 2vh rgba(0, 0, 0, 0.1);
+	border-radius: 1.5vh;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  width: 50vh;
+	height: 3vh;
+  font-size: 1.2rem;
+  padding: 1vh;
+  border-radius: 1vh;
+  border: none;
+
+	margin-bottom: 3vh;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0 0.02vh 0.08vh rgba(0, 0, 0, 0.1);
+  border: 0.01vh solid #2196f3;
+}
+
+label {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+color: #2fe39b;
+}
+button[type="submit"] {
+  display: inline-block;
+  width: 100%;
+  background-color: #2196f3;
+  color: #fff;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+	margin-top:0.30vh;
+  font-weight: 7vh;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #1976d2;
+}
+
+button[type="submit"]:active {
+  background-color: #1e88e5;
+}
+
+.esc{
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  color: #fff;
+  font-size: 20px;
+}

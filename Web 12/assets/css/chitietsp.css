@@ -1,0 +1,251 @@
+
+a{
+    text-decoration: none;
+    color: #555;
+}
+/* p{
+    color: #555;
+} */
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+
+}
+.col-2 img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+.col-2 h1{
+    font-size: 5rem;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.button{
+    display: inline-block;
+    background: #e45f56;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+    cursor: pointer;
+}
+.button:hover{
+    background: #c23616;
+}
+.col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.col-3 img{
+    width: 100%;
+}
+.small-container{
+    max-width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+.col-4{
+    flex-basis: 24%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    width: 100%;
+}
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 1.4rem;
+} 
+.rating .fa{
+	text-align: center;
+	width: 200px;
+	height: 35px;
+    color:#fff;
+    font-size: 1.6rem;
+	background: #3a9ad9;
+	border:1px solid #ccc;
+	border-radius: 10px;
+	transition-delay: 0.1s;
+	display: block;
+    cursor: pointer;
+}
+.rating .fa:hover{
+    color: #2d72a0;
+    background: #6ba8d1;
+}
+.rating button{
+	margin-bottom: 40px;
+}
+.col-4:hover{
+    transform: translateY(-5px);
+}
+
+.col-5{
+    width: 160px;
+}
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.col-5 img:hover{
+   
+}
+
+/* footer */
+
+ ul{
+    list-style-type: none;
+ }
+.app-logo{
+    margin-top:20px ;
+}
+.app-logo img{
+    width: 140px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright{
+    text-align: center;
+}
+
+.text{
+	cursor: pointer;
+}
+
+/* Tất cả sản phẩm */
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+.row-2 h2{
+    font-size: 2.8rem;
+}
+select{
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
+}
+.page-btn{
+     margin: 0 auto 80px;
+}
+.page-btn span{
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.page-btn span:hover{
+    background: #ff523b;
+    color: #fff;
+}
+ /* Thông tin từng sản phẩm */
+ /* .single-product{
+    margin-top: 80px;
+ } */
+ .single-product .col-2 img{
+    padding: 0;
+ }
+.single-product .col-2 img:hover{
+		 transform:scale(1.1);
+	 filter: blur(0);
+	 cursor: pointer;
+}
+ .single-product .col-2{
+    padding: 20px;
+ }
+.single-product .col-2 p{
+	font-weight: bold;
+}
+ .single-product h4{
+    margin: 20px 0;
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+ }
+ .single-product h5{
+    margin: 20px 0;
+    font-size: 2rem;
+    font-weight: bold;
+ }
+ .single-product input{
+    width: 55px;
+    height: 25px;
+    padding-left: 10px;
+    font-size: 2rem;
+    margin-right: 10px;
+    border: 1px solid black;
+ }
+ input:focus{
+    outline: none;
+ }
+ .single-product .fa{
+    /* color: #c23616; */
+    margin-left: 10px;
+ }
+ .small-img-row{
+    display: flex;
+    justify-content: space-between;
+ }
+ .small-img-col{
+	 margin: 5px;
+    cursor: pointer;
+	 border: 1px solid #E6DEDE;
+}
+/* Giỏ hàng */
+/* media querry for less than 600 screen size */
+@media only screen and (max-width: 600px){
+    .row{
+        text-align: center;
+    }
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+    }
+    .single-product .row {
+        text-align: left;
+    }
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+    .single-product h1{
+        font-size: 2.6rem;
+        line-height: 32px;
+    }
+    .cart-info p{
+        display: none;
+    }
+}
+ 

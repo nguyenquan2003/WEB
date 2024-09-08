@@ -1,0 +1,311 @@
+.footer{
+    max-width: 1270px;
+    background-color: #fafafa;
+    padding: 10px;
+}
+
+.footer a, p, h3{
+    font-size: 1.5rem;
+
+}
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.footer-b{
+    padding: 10px;
+}
+
+.list-footer {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.item-footer {
+    margin-bottom: 10px;
+}
+.link-footer {
+    color: #333;
+    text-decoration: none;
+}
+.link-footer:hover {
+    text-decoration: underline;
+}
+
+.col{
+    margin: 0 20px;
+}
+.qr-code {
+    width: 100px;
+    height: 100px;
+}
+.contact {
+    margin-top: 10px;
+    /* float: right; */
+    /* margin-right: 100px; */
+}
+
+/* các icon fb,ins,tw và yt */
+.facebook {
+    text-decoration: none;
+    background-color: #fff;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    color: #313b42;
+    line-height: 40px;
+    overflow: hidden;
+}
+.facebook::before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+    background-color: #3b5998;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+.facebook:hover::before {
+    top: -10%;
+    left: -10%;
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.facebook:hover i {
+    color: #fff;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transition: all 0.5s;
+}
+.twitter {
+    text-decoration: none;
+    background-color: #fff;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #32cafd;
+    line-height: 40px;
+}
+.twitter::before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+    background-color: #32cafd;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+.twitter:hover::before {
+    top: -10%;
+    left: -10%;
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.twitter:hover i {
+    color: #fff;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transition: all 0.5s;
+}
+.youtube {
+    text-decoration: none;
+    background-color: #fff;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #d94938;
+    line-height: 40px;
+}
+.youtube::before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+    background-color: #f44336;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+.youtube:hover::before {
+    top: -10%;
+    left: -10%;
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.youtube:hover i {
+    color: #fff;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transition: all 0.5s;
+}
+.instagram {
+    text-decoration: none;
+    background-color: #fff;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #E4405F;
+    line-height: 40px;
+}
+.instagram::before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+    background-color: #E4405F;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+}
+.instagram:hover::before {
+    top: -10%;
+    left: -10%;
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.instagram:hover i {
+    color: #fff;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.download {
+    margin-top: 10px;
+}
+
+.qr-code {
+    width: 80;
+    height: 80;
+    margin-left: 5px;
+}
+.text1 {
+    margin-right: 80px;
+}
+.app-store {
+    width: 130px;
+    height: auto;
+    margin: 1px 114px;
+    position: absolute;
+}
+.ch-play {
+    width: 130px;
+    height: auto;
+    margin: 62px 114px;
+    position: absolute;
+}
+.text2 {
+    list-style-type: none;
+    text-decoration: none;
+    line-height: 20px;
+}
+.text2:hover{
+   text-decoration: underline;
+  
+}
+
+
+.footer-img{
+    margin-top: 15px;
+    text-align: center;
+}
+.thong-bao,
+.dang-ki {
+    height: 30px;
+    margin: auto;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.thong-bao:hover,
+.dang-ki:hover{
+    opacity: 1;
+}
+
+.text4 {
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+
+
+/* đăng kí nhận thông tin ưu đãi */
+.dang-ky{
+   background: red;
+   border: 1px none;
+   color: white;
+   padding: 0.1rem 1.1rem;
+   cursor: pointer;
+   border-radius: 4px;
+   height: 35px;
+   font-size: 1.3rem;
+}
+.dang-ky:hover{
+    background: rgb(110, 11, 11);
+}
+.email{
+   border-radius: 4px;
+   height: 35px;
+   font-size: 1.3rem;
+   margin-top: 10px;
+   width: 70%;
+}
+
+.sign-up{
+   margin-top:20px;
+   /* margin-left: 450px; */
+   position: relative;
+}
+.sign-up h3{
+    font-size: 1.7rem;
+}
+.lazy-loaded{
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: 32px;
+   right: -5px;
+}
+
+
+
+/* ===========FOOTER MINI============= */
+.mini_footer{
+    position: relative;
+    bottom: 0;
+    background: #eee;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+.mini_footer-img{
+    margin-top: 10px;
+    height: 30px;
+    text-align: center;
+}
+
+.mini_footer-img img{
+    height: 100%;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.mini_footer-img img:hover{
+    opacity: 1;
+}

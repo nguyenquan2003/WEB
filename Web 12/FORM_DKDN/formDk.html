@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_Dang Ky</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.4.0-web/css/all.min.css">
+    
+</head>
+<body>
+    <div id="container">
+        <div class="login-form">
+            <h2 >ĐĂNG KÝ TÀI KHOẢN</h2>
+            <form action="#" method="GET" name="signin">
+                <label for="phone"><b>Số điện thoại</b></label><br> 
+                <input name="phone" id="phone" type="text" placeholder="Nhập Số Điện Thoại" required>
+                <span class="errorphone"></span><br>
+                <label for="email"><b>Email</b></label><br> 
+                <input name="email" id="email" type="email" placeholder="Nhập Email" required>
+                <span class="erroremail"></span><br>
+                <label for="passwd"><b>Password</b></label><br>
+                <input name="passwd" id="passwd" type="password" placeholder="Nhập Password" required><br>
+                <span class="errorpass"></span><br>
+                <label for="repasswd"><b>Xác nhận Password</b></label><br>
+                <input name="repasswd" id="repasswd" type="password" placeholder="Xác nhận Password" required><br>
+                <span class="errorRepass"></span><br>
+    
+                
+            </form>
+            <button onclick="KiemTra()" type="submit" class="button">ĐĂNG KÝ</button>
+            <br>
+            <p style="margin-left: 160px; color: #dacfcf;">HOẶC</p>
+            
+        </div>
+        <div>
+            <button class="app">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png" class="gg">
+                <span class="gg-text"><a href="https://accounts.google.com/v3/signin/identifier?dsh=S1292638655%3A1684660709857226&hl=vi&ifkv=Af_xneHPO6kY6iHJaMFun0jko9PVBp-oazbLhOUvc1uWmhbA1AI4og0BMCkrtEv94jx9YCAGPvLqtA&flowName=GlifWebSignIn&flowEntry=ServiceLogin" style="color: white; text-decoration: none;" target="_blank">Tiếp tục với Google</a></span>
+            </button>
+        </div>
+        <div>
+            <button class="app-fb">
+                <img src="https://1.bp.blogspot.com/-xKSHIGIWVWw/X8nZ7UZCHYI/AAAAAAAALBs/aih3kRhHrnsR_-GLju2gP2PK_faM_nNsACPcBGAYYCw/s600/Beautiful-design-Facebook-logo-social-media-png.png" class="fb">
+                <span class="fb-text"><a href="https://www.facebook.com/" style="color: white; text-decoration: none;" target="_blank">Tiếp tục với Facebook</a></span>
+            </button>
+        </div>
+        <div class="signin">
+            Bạn đã có tài khoản <a href="formDN.html" target="_blank" style="color: aquamarine;">Đăng Nhập</a>
+        </div>
+
+        <a class="esc" href="../TrangChu.html">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+    </div>
+             <div id="announce">
+                <div class="a-right">
+                    <p>Bạn đã đăng ký thành công với tài khoản gmail: 
+                         <span class="account"></span>
+                    </p>
+                    <a style="top: 10px; right: 50px;" class="esc" href="../TrangChu.html">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div style="clear: both;"></div>
+    <script src="Valid_DK.js"></script>
+</body>
+</html>
