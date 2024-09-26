@@ -1,0 +1,1 @@
+Đầu tiên kết nối database vào warmserver hoặc xampp để có cơ sở dữ liệu cập nhật, rồi sau đó vô index.php trong folder của da (nhưng không phải index.php trong public) chạy visual stuudio code run php, tk của teacher: Van Hung, pass 123, tk của sinh viên 2001216021, 2001216097, 2001210779, pass 123
