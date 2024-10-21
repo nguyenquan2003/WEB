@@ -1,0 +1,63 @@
+﻿@model Trangweb.Models.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Product", new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row my-2">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Name, "Tên sản phẩm")
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.MieuTa, "Mô tả sản phẩm")
+            @Html.TextBoxFor(model => model.MieuTa, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MieuTa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Price, "Giá sản phẩm")
+            @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-2"></div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.Image, "Ảnh sản phẩm")
+            <input type="file" name="imageFile" id="imageFile" class="form-control" />
+            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Id_Category, "Danh mục sản phẩm")
+            @Html.DropDownListFor(model => model.Id_Category, new SelectList(ViewBag.Loai, "Id_Category", "Name"),
+            "Chọn loại sản phẩm", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Id_Category)
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary">Cập nhật sản phẩm</button>
+            <a href="/Admin/Product" class="btn btn-warning">Quay lại</a>
+        </div>
+    </div>
+
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

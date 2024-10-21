@@ -1,0 +1,192 @@
+﻿@model List<Trangweb.Models.Product>
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+}
+<h2>@ViewBag.Title</h2>
+<p>
+    @using (Html.BeginForm("Index", "Category", FormMethod.Get, new { id = "myform" }))
+    {
+        <b>Sắp xếp:</b>
+        @Html.DropDownList("sortOption", new SelectList(new List<SelectListItem>
+        {
+            new SelectListItem{Text="Giá tăng dần",Value="tang"},
+            new SelectListItem{Text="Giá giảm dần",Value="giam"},
+        }, "Value", "Text"), "Chọn cách sắp xếp...", new { onchange = "this.form.submit();" })
+
+    }
+</p>
+
+@*<p>
+        @using (Html.BeginForm("Index", "Category", FormMethod.Get, new { id = "myform" }))
+        {
+            <b>Sắp xếp:</b>
+            @Html.DropDownList("sortOption", new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem{Text="Giá tăng dần",Value="tang"},
+                new SelectListItem{Text="Giá giảm dần",Value="giam"},
+            }, "Value", "Text"), "Chọn cách sắp xếp...", new { onchange = "this.form.submit();" })
+        }
+    </p>*@
+<div class="g">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="item carousel-item active">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col">
+                            <!-- Sản phẩm 1 -->
+                            <div class="card h-100 shadow-sm" style="width: 280px;">
+                                <a href="/Admin/Product/Detail/@item.Id">
+                                    <img src="~/Image/Product/@item.Image" style="width: 220px; height: 180px; padding-left: 10px;" alt="product.title" />
+                                </a>
+
+                                <div class="label-top shadow-sm">
+                                    <a class="text-white" href="#" style="text-decoration: none;">FOODMAP FRUITS</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="clearfix mb-3">
+                                        <span class="float-start badge rounded-pill bg-success" style="font-size: 15px;">@item.Price VNĐ</span>
+                                        <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link"></a></span>
+                                    </div>
+                                    <h5 class="card-title" style="height: 30px;">@item.Name</h5>
+                                    <p class="card-text">@item.MieuTa </p>
+                                    <div class="d-grid gap-2 ">
+                                        @*<a href="/Cart/Add/@item.Id" class="btn bold-btn border border-success " style="font-weight: 600;">add to cart</a>*@
+                                        <p class="btn bold-btn border border-success " style="font-weight: 600; color: green;">
+                                            @Html.ActionLink("Edit", "Edit", new
+                                            {
+                                                id = item.Id,
+                                                controller = "Product",
+area = "Admin"
+                                            })
+                                        </p>
+                                        <p class="btn bold-btn border border-success " style="font-weight: 600; color: green;">
+                                            @Html.ActionLink("Delete", "Delete", new
+                                            {
+                                                id = item.Id,
+                                                controller = "Product",
+area = "Admin"
+                                            })
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="g1">
+    <ul class="pagination justify-content-center">
+        @{
+            int prevPage;
+            if (ViewBag.Page == 1)
+            {
+                prevPage = 1;
+            }
+            else
+            {
+                prevPage = ViewBag.Page - 1;
+            }
+
+            <li class="page-item active">
+                <a class="page-link"
+                   href="@Url.Action("Index", "Category", new { id = ViewBag.Id, page = prevPage, search = ViewBag.Search, sortOption = ViewBag.SortOption })">
+                    <i class="fa-solid fa-backward-step"></i>
+                </a>
+            </li>
+        }
+
+        @for (int i = 1; i <= ViewBag.NoOfPages; i++)
+        {
+            if (i == ViewBag.Page)
+            {
+                <li class="page-item active">
+                    <span class="page-link">@i</span>
+                </li>
+            }
+            else
+            {
+                <li class="page-item">
+                    <a class="page-link"
+                       href="@Url.Action("Index", "Category", new { id = ViewBag.Id, page = i, search = ViewBag.Search, sortOption = ViewBag.SortOption })">
+                        @i
+                    </a>
+                </li>
+            }
+        }
+
+        @{
+            int nextPage;
+            if (ViewBag.Page == ViewBag.NoOfPages)
+            {
+                nextPage = ViewBag.NoOfPages;
+            }
+            else
+            {
+                nextPage = ViewBag.Page + 1;
+            }
+
+            <li class="page-item active">
+                <a class="page-link"
+                   href="@Url.Action("Index", "Category", new { id = ViewBag.Id, page = nextPage, search = ViewBag.Search, sortOption = ViewBag.SortOption })">
+                    <i class="fa-solid fa-forward-step"></i>
+                </a>
+            </li>
+        }
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section narbar {
+    <div></div>
+    <div class="c1">
+        <i class="fa-solid fa-bars"></i>DANH MỤC SẢN PHẨM
+
+    </div>
+    @foreach (var item in ViewBag.Loai)
+    {
+        <div class="c3">
+
+            <a href="/Admin/Category/Index/@item.Id_Category" style="color: white;">
+                <img src="~/Image/@item.Image" style="width: 30px; height: auto;" />
+                @item.Name
+            </a>
+
+        </div>
+    }
+}
+
+@section SearchProductByName {
+    <form action="/Admin/Product/Index">
+        <input class="b1" type="search" placeholder="Nhập tên sản phẩm" id="search" name="search"
+               value="@ViewBag.Search" />
+        <button style="height: 30px; width: 35px; margin-left: -5px;" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+}

@@ -1,0 +1,22 @@
+﻿@model Trangweb.Models.Product
+@{
+    ViewBag.Title = "Delete";
+}
+
+<form action="/admin/product/delete/@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <table class="table">
+        <tr>
+            <th>Product Name</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>@Model.Price</td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="/Admin/product/Index" class="btn btn-dark">Cancel</a>
+</form>
+

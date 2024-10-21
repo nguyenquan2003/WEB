@@ -1,0 +1,121 @@
+﻿@*@model List<Trangweb.Models.Category>*@
+@model List<Trangweb.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<img src="~/Image/d1.jpg" style="width: 1250px; margin-left: 10px;" />
+<div class="e">
+    <div><img src="~/Image/e.png" style="width: 200px; height: 80px;"></div>
+    <div style="color: rgb(16, 114, 58); font-size: 24px;  font-weight: bold;">KẾT THÚC SAU </div>
+    <div>
+        <div class="countdown" id="countdown">
+            <span class="countdown-part" id="days"></span>
+            <span class="countdown-part" id="hours"></span>
+            <span class="countdown-part" id="minutes"></span>
+            <span class="countdown-part" id="seconds"></span>
+        </div>
+    </div>
+    <script>
+        const endDate = new Date("2023-12-06T23:59:59");
+
+        function updateCountdown() {
+            const currentDate = new Date();
+            const timeLeft = endDate - currentDate;
+
+            if (timeLeft <= 0) {
+                document.getElementById("countdown").innerHTML = "Đã hết thời gian!";
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = `${days} ngày`;
+                document.getElementById("hours").innerHTML = `${hours} giờ`;
+                document.getElementById("minutes").innerHTML = `${minutes} phút`;
+                document.getElementById("seconds").innerHTML = `${seconds} giây`;
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+    <div class="e1"></div>
+</div>
+
+
+
+<div class="g">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="item carousel-item active">
+                <div class="row">
+                    @foreach (var item in ViewBag.Pro)
+                    {
+                        <div class="col hp h-25">
+                            <!-- Sản phẩm 1 -->
+                            <div class="card h-100 shadow-sm">
+                                <a href="/Product/Detail/@item.Id">
+                                    <img src="~/Image/Product/@item.Image" style="width: 220px; height: 180px; padding-left: 10px;" alt="product.title" />
+                                </a>
+
+                                <div class="label-top shadow-sm">
+                                    <a class="text-white" href="#" style="text-decoration: none;">FOODMAP FRUITS</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="clearfix mb-3">
+                                        <span class="float-start badge rounded-pill bg-success" style="font-size: 15px;">@item.Price VNĐ</span>
+                                        <span class="float-end"><a href="#" class="small text-muted text-uppercase aff-link"></a></span>
+                                    </div>
+                                    <h5 class="card-title" style="height: 30px;">@item.Name</h5>
+                                    <p class="card-text">@item.MieuTa </p>
+                                    <div class="d-grid gap-2 ">
+                                        <a href="/Cart/Add/@item.Id" class="btn  bold-btn border border-success " style="font-weight: 600;">add to cart</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section narbar {
+    <div></div>
+    <div class="c1">
+        <i class="fa-solid fa-bars"></i>DANH MỤC SẢN PHẨM
+    </div>
+    @foreach (var item in ViewBag.Loai)
+    {
+        <div class="c3">
+            <a href="/Category/Index/@item.Id_Category" style="color: white;">
+                <img src="~/Image/@item.Image" style="width: 30px; height: auto;" />
+                @item.Name
+            </a>
+
+        </div>
+    }
+}
+
+@section SearchProductByName {
+    <form action="/Product/Index">
+        <input class="b1" type="search" placeholder="Nhập tên sản phẩm" id="search" name="search"
+               value="@ViewBag.Search" />
+        <button style="height: 30px; width: 35px; margin-left: -5px;" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+}
+
+
+

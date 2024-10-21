@@ -1,0 +1,62 @@
+﻿@model Trangweb.Models.Product
+@{
+    ViewBag.Title = "Detail";
+}
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<table class="table table-borderless">
+    <tr>
+        <td>
+        </td>
+    </tr>
+    <tr>
+
+        <td>
+            <img src="~/Image/Product/@Model.Image" style="width: 200px; height: 200px;">
+        </td>
+        <td>
+            <h2>@Model.Name</h2>
+            <h2 class="mb-5">Giá: <span class="text-danger">@Model.Price đ</span></h2>
+
+            <p class="fw-bold">Hãng: @Model.Category.Name</p>
+            <p class="fw-bold">Mô tả: @Model.MieuTa</p>
+            @*<a href="/Cart/Add/@Model.Id" class="btn btn-danger w-50">Thêm vào giỏ</a>*@
+        </td>
+    </tr>
+</table>
+
+<a href="@Url.Action("Index", "Product")">Back to List of Products</a>
+
+
+
+
+
+@section narbar {
+    <div></div>
+    <div class="c1">
+        <i class="fa-solid fa-bars"></i>DANH MỤC SẢN PHẨM
+    </div>
+    @foreach (var item in ViewBag.Loai)
+    {
+        <div class="c3">
+            <a href="/Admin/Category/Index/@item.Id_Category" style="color: white;">
+                <img src="~/Image/@item.Image" style="width: 30px; height: auto;" />
+                @item.Name
+            </a>
+
+        </div>
+    }
+}
+
+@section SearchProductByName {
+    <form action="/Admin/Product/Index">
+        <input class="b1" type="search" placeholder="Nhập tên sản phẩm" id="search" name="search"
+               value="@ViewBag.Search" />
+        <button style="height: 30px; width: 35px; margin-left: -5px;" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+}
+
+
